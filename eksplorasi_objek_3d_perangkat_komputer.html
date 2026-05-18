@@ -1,0 +1,368 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Objek 3D Perangkat Komputer - Belajar Komputer</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&amp;family=Lexend:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-tint": "#00668a",
+                        "tertiary": "#006e29",
+                        "primary-fixed": "#c4e7ff",
+                        "on-tertiary-fixed": "#002107",
+                        "on-surface": "#121c28",
+                        "error-container": "#ffdad6",
+                        "inverse-primary": "#7cd0ff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "outline-variant": "#bdc8d1",
+                        "surface-container-low": "#eef4ff",
+                        "tertiary-fixed-dim": "#7bdb85",
+                        "on-tertiary-fixed-variant": "#00531d",
+                        "tertiary-fixed": "#96f89f",
+                        "on-secondary-fixed": "#221b00",
+                        "on-secondary-container": "#715d00",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed-dim": "#e8c426",
+                        "on-background": "#121c28",
+                        "primary": "#00668a",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-container-highest": "#d9e3f4",
+                        "surface-dim": "#d1dbec",
+                        "on-primary-fixed-variant": "#004c69",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#3abef9",
+                        "outline": "#6e7980",
+                        "inverse-surface": "#27313e",
+                        "secondary-fixed": "#ffe173",
+                        "surface": "#f8f9ff",
+                        "secondary-container": "#fdd73b",
+                        "surface-variant": "#d9e3f4",
+                        "on-surface-variant": "#3e484f",
+                        "primary-fixed-dim": "#7cd0ff",
+                        "on-primary-fixed": "#001e2c",
+                        "surface-container": "#e5eeff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "on-tertiary-container": "#00501c",
+                        "tertiary-container": "#66c673",
+                        "surface-container-high": "#dfe9fa",
+                        "on-primary-container": "#004a66",
+                        "secondary": "#705d00",
+                        "on-secondary-fixed-variant": "#554500",
+                        "background": "#f8f9ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base": "8px",
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "sm": "12px",
+                        "margin-desktop": "64px",
+                        "xl": "80px",
+                        "gutter": "24px",
+                        "xs": "4px",
+                        "lg": "48px"
+                    },
+                    "fontFamily": {
+                        "headline-lg": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "headline-xl": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "label-bold": ["Lexend"],
+                        "body-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-bold": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md h-screen flex overflow-hidden">
+<!-- SideNavBar (Web Only) -->
+<nav class="hidden md:flex bg-surface-container-low dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(18,28,40,1)] flex-col py-md gap-base z-50">
+<div class="px-gutter pb-md border-b-4 border-on-background mb-sm"><div class="flex items-center gap-sm"><img alt="Mascot Robot Hardware Hero" class="w-12 h-12 rounded-full border-2 border-on-background bg-secondary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYw7acSBqQRDvTYaJTgG7sucgGMZ6hM-2kpO9xKiwvrhM6PKFBTCnXpRbjV1WMMUg834HmVZDr3VHMCGhhdCJzp1TkmjaiQNhvt-z97XUJIwr3WwVuMVYa9a-aZfKDGlByonp2XVKOaVLYc6hUFFEeO0tV_bOeKnCBFC0p5aGKvr8CGli8UMDyYh-XtVKe2QqvbzjkDuPgrsCcHjmr-Nw_k_sW2iugh958pLhL3k5I8_Tzx6hn78DDMVrM7lF18PtgOvTkhmSFUw"/><div><h2 class="font-headline-md text-primary">Halo, Pahlawan!</h2><p class="font-label-bold text-label-bold text-on-surface-variant">Siap belajar hari ini?</p></div></div></div>
+<div class="flex-1 overflow-y-auto px-2"><a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_utama_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="home">home</span><span class="font-label-bold text-label-bold">Beranda</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="pilih_kategori_materi_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span><span class="font-label-bold text-label-bold">Materi</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm bg-secondary-container text-on-secondary-container border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(18,28,40,1)] rounded-lg mx-2 my-1 scale-95 duration-100" href="eksplorasi_objek_3d_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="3d_rotation" data-weight="fill" style="font-variation-settings: 'FILL' 1;">3d_rotation</span><span class="font-label-bold text-label-bold">Objek 3D</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_video_edukasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span><span class="font-label-bold text-label-bold">Video</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="kuis_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="quiz">quiz</span><span class="font-label-bold text-label-bold">Kuis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="tentang_aplikasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="info">info</span><span class="font-label-bold text-label-bold">Tentang</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 flex flex-col h-full overflow-hidden relative pb-24 md:pb-0 md:ml-64">
+<!-- Scrollable Content Canvas -->
+<div class="flex-1 overflow-y-auto p-margin-mobile md:p-margin-desktop">
+<div class="max-w-[1280px] mx-auto flex flex-col gap-md">
+<!-- Page Header -->
+<div class="flex flex-col gap-2 mb-4">
+<h2 class="font-headline-xl text-headline-xl text-primary">Eksplorasi Objek 3D</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl">Pilih perangkat komputer untuk melihat bentuk 3D dan mengenal bagian-bagiannya.</p>
+</div>
+<!-- Main Interactive Layout -->
+<div class="flex flex-col lg:flex-row gap-gutter h-full min-h-[500px]">
+<!-- 3D Canvas Area (Center) -->
+<div class="flex-1 relative bg-surface-container-lowest rounded-xl border-4 border-outline-variant shadow-[6px_6px_0px_0px_rgba(189,200,209,1)] flex flex-col overflow-hidden">
+<!-- 3D Viewport -->
+<div class="flex-1 bg-surface-container relative overflow-hidden" style="min-height:460px;">
+<!-- Overlay Controls -->
+<div class="absolute right-4 top-4 flex flex-col gap-3 z-10">
+<button class="w-10 h-10 bg-surface-container-lowest border-3 border-outline text-primary rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(110,121,128,1)] hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(110,121,128,1)] transition-all">
+<span class="material-symbols-outlined" data-icon="360">360</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border-3 border-outline text-primary rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(110,121,128,1)] hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(110,121,128,1)] transition-all">
+<span class="material-symbols-outlined" data-icon="zoom_in">zoom_in</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border-3 border-outline text-primary rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(110,121,128,1)] hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(110,121,128,1)] transition-all">
+<span class="material-symbols-outlined" data-icon="zoom_out">zoom_out</span>
+</button>
+<button class="w-10 h-10 bg-surface-container-lowest border-3 border-outline text-primary rounded-xl flex items-center justify-center shadow-[3px_3px_0px_0px_rgba(110,121,128,1)] hover:translate-y-1 hover:shadow-[1px_1px_0px_0px_rgba(110,121,128,1)] transition-all mt-3">
+<span class="material-symbols-outlined" data-icon="restart_alt">restart_alt</span>
+</button>
+</div>
+<!-- 3D Model Viewer -->
+<model-viewer id="model-3d-komputer" src="assets/models/keyboard.glb" camera-controls auto-rotate shadow-intensity="1" style="width:100%;height:100%;min-height:460px;background:#e8f1fb;display:block;">
+  <div slot="error" class="w-full h-full flex items-center justify-center">
+    <p class="font-body-md text-on-surface-variant text-center p-4">⚠️ Model 3D belum tersedia.</p>
+  </div>
+</model-viewer>
+<!-- Instruction Bubble -->
+<div class="absolute bottom-4 left-1/2 -translate-x-1/2 bg-surface-container-lowest border-3 border-outline-variant rounded-xl py-2 px-4 shadow-[4px_4px_0px_0px_rgba(189,200,209,1)] flex items-center gap-2">
+<span class="material-symbols-outlined text-sm text-tertiary-container">touch_app</span>
+<span class="font-body-md text-on-surface-variant text-sm">Putar & zoom untuk melihat berbagai sisi.</span>
+</div>
+</div>
+</div>
+<!-- Side Panel (Info & Selection) -->
+<div class="w-full lg:w-72 flex flex-col gap-3 shrink-0">
+<!-- Description Panel -->
+<div id="info-panel" class="bg-primary-container text-on-primary-container p-4 rounded-xl border-4 border-primary shadow-[4px_4px_0px_0px_rgba(0,102,138,1)] relative">
+<div class="absolute -left-4 top-6 w-0 h-0 border-t-[10px] border-t-transparent border-r-[16px] border-r-primary border-b-[10px] border-b-transparent hidden lg:block"></div>
+<h3 id="info-name" class="font-headline-md text-headline-md mb-1 flex items-center gap-2">
+<span id="info-icon" class="material-symbols-outlined">keyboard</span>
+Keyboard
+</h3>
+<p id="info-desc" class="font-body-md text-sm font-bold leading-snug">Keyboard adalah perangkat input yang digunakan untuk mengetik huruf, angka, dan simbol ke komputer.</p>
+</div>
+<!-- Object Selection with Tabs -->
+<div class="flex-1 bg-surface-container-lowest rounded-xl border-4 border-outline-variant shadow-[4px_4px_0px_0px_rgba(189,200,209,1)] flex flex-col overflow-hidden">
+  <div class="px-3 pt-3 pb-0 shrink-0">
+    <h4 class="font-label-bold text-label-bold text-on-surface-variant mb-2 uppercase tracking-wider text-xs">Pilih Perangkat:</h4>
+    <!-- Category Tabs -->
+    <div class="flex border-b-2 border-outline-variant">
+      <button onclick="gantiTab('input',this)" id="tab-input" class="tab-btn active-tab flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-primary bg-primary-container text-on-primary-container transition-all">
+        <span class="material-symbols-outlined text-base">keyboard</span><span>Input</span>
+      </button>
+      <button onclick="gantiTab('output',this)" id="tab-output" class="tab-btn flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-transparent bg-surface text-on-surface-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-base">desktop_windows</span><span>Output</span>
+      </button>
+      <button onclick="gantiTab('proses',this)" id="tab-proses" class="tab-btn flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-transparent bg-surface text-on-surface-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-base">memory</span><span>Proses</span>
+      </button>
+      <button onclick="gantiTab('penyimpanan',this)" id="tab-penyimpanan" class="tab-btn flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-transparent bg-surface text-on-surface-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-base">hard_drive</span><span>Simpan</span>
+      </button>
+    </div>
+  </div>
+  <!-- Tab Content -->
+  <div class="flex-1 overflow-y-auto p-3">
+    <!-- Input Tab -->
+    <div id="panel-input" class="tab-panel grid grid-cols-3 gap-2">
+      <button onclick="pilihModel(this)" data-src="assets/models/keyboard.glb" data-icon="keyboard" data-name="Keyboard" data-desc="Keyboard adalah perangkat input untuk mengetik huruf, angka, dan simbol ke komputer." class="dev-btn active-btn flex flex-col items-center justify-center gap-1 bg-secondary-container text-on-secondary-container rounded-xl p-2 border-3 border-secondary shadow-[3px_3px_0px_0px_rgba(113,93,0,1)] transition-all">
+        <span class="material-symbols-outlined text-xl">keyboard</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Keyboard</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/mouse.glb" data-icon="mouse" data-name="Mouse" data-desc="Mouse adalah perangkat input untuk menggerakkan kursor dan memilih objek di layar komputer." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">mouse</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Mouse</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/scanner.glb" data-icon="document_scanner" data-name="Scanner" data-desc="Scanner adalah perangkat input untuk memindai dokumen atau gambar fisik menjadi data digital." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">document_scanner</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Scanner</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/microphone.glb" data-icon="mic" data-name="Microphone" data-desc="Microphone adalah perangkat input yang mengubah suara menjadi sinyal digital agar komputer dapat memprosesnya." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">mic</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Mikrofon</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/webcam.glb" data-icon="videocam" data-name="Webcam" data-desc="Webcam adalah perangkat input berupa kamera yang menangkap gambar dan video secara langsung ke komputer." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">videocam</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Webcam</span>
+      </button>
+    </div>
+    <!-- Output Tab -->
+    <div id="panel-output" class="tab-panel hidden grid grid-cols-3 gap-2">
+      <button onclick="pilihModel(this)" data-src="assets/models/monitor.glb" data-icon="desktop_windows" data-name="Monitor" data-desc="Monitor adalah perangkat output yang menampilkan informasi dan hasil pengolahan data secara visual." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">desktop_windows</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Monitor</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/printer.glb" data-icon="print" data-name="Printer" data-desc="Printer adalah perangkat output yang mencetak hasil pengolahan data komputer menjadi dokumen fisik." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">print</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Printer</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/speakers.glb" data-icon="volume_up" data-name="Speaker" data-desc="Speaker adalah perangkat output yang mengubah sinyal digital dari komputer menjadi suara yang dapat didengar." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">volume_up</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Speaker</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/headphone.glb" data-icon="headphones" data-name="Headphone" data-desc="Headphone adalah perangkat output audio yang dipakai di telinga untuk mendengarkan suara dari komputer." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">headphones</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Headphone</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/projector.glb" data-icon="slideshow" data-name="Projector" data-desc="Projector adalah perangkat output yang memproyeksikan gambar atau video dari komputer ke layar atau permukaan yang lebih besar." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">slideshow</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Projector</span>
+      </button>
+    </div>
+    <!-- Proses Tab -->
+    <div id="panel-proses" class="tab-panel hidden grid grid-cols-3 gap-2">
+      <button onclick="pilihModel(this)" data-src="assets/models/cpu.glb" data-icon="memory" data-name="CPU" data-desc="CPU (Central Processing Unit) adalah otak komputer yang memproses semua instruksi dan data." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">memory</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">CPU</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/processor.glb" data-icon="developer_board" data-name="Processor" data-desc="Processor adalah komponen utama dalam CPU yang melakukan semua kalkulasi dan menjalankan program." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">developer_board</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Processor</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/ram.glb" data-icon="sim_card" data-name="RAM" data-desc="RAM (Random Access Memory) adalah memori sementara yang digunakan komputer untuk menyimpan data yang sedang diproses." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">sim_card</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">RAM</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/motherboard.glb" data-icon="developer_board" data-name="Motherboard" data-desc="Motherboard adalah papan induk yang menghubungkan semua komponen di dalam komputer." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">developer_board</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Motherboard</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/vga-card.glb" data-icon="display_settings" data-name="VGA Card" data-desc="VGA Card (kartu grafis) adalah komponen pemroses yang mengolah dan menampilkan gambar serta video ke monitor." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">display_settings</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">VGA Card</span>
+      </button>
+    </div>
+    <!-- Penyimpanan Tab -->
+    <div id="panel-penyimpanan" class="tab-panel hidden grid grid-cols-3 gap-2">
+      <button onclick="pilihModel(this)" data-src="assets/models/harddisk.glb" data-icon="hard_drive" data-name="Hard Disk" data-desc="Hard Disk adalah perangkat penyimpanan utama komputer yang menyimpan sistem operasi, program, dan data secara permanen." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">hard_drive</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Hard Disk</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/ssd.glb" data-icon="storage" data-name="SSD" data-desc="SSD (Solid State Drive) adalah perangkat penyimpanan yang lebih cepat dari hard disk karena menggunakan chip memori flash." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">storage</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">SSD</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/flashdisk.glb" data-icon="usb" data-name="Flash Disk" data-desc="Flash Disk adalah perangkat penyimpanan portabel yang menggunakan memori flash dan terhubung lewat port USB." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">usb</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Flash Disk</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/hard-drive.glb" data-icon="hard_drive" data-name="External Drive" data-desc="External Hard Drive adalah perangkat penyimpanan portabel berkapasitas besar yang terhubung ke komputer lewat kabel USB." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">hard_drive</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Ext. Drive</span>
+      </button>
+      <button onclick="pilihModel(this)" data-src="assets/models/memory-card.glb" data-icon="sd_card" data-name="Memory Card" data-desc="Memory Card adalah perangkat penyimpanan berukuran kecil yang digunakan pada kamera, ponsel, dan perangkat portabel lainnya." class="dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all">
+        <span class="material-symbols-outlined text-xl">sd_card</span>
+        <span class="font-label-bold text-label-bold text-xs leading-tight text-center">Memory Card</span>
+      </button>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- Action Buttons Area -->
+<div class="flex flex-wrap justify-end gap-4 mt-6 pt-6 border-t-4 border-outline-variant">
+<button class="px-8 py-4 bg-surface text-on-surface font-label-bold text-label-bold rounded-xl border-4 border-outline-variant shadow-[4px_4px_0px_0px_rgba(189,200,209,1)] hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(189,200,209,1)] transition-all flex items-center gap-2" onclick="window.location.href='menu_utama_pengenalan_perangkat_komputer.html'">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+                        Kembali
+                    </button>
+<button class="px-8 py-4 bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold rounded-xl border-4 border-tertiary shadow-[4px_4px_0px_0px_rgba(0,110,41,1)] hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,110,41,1)] transition-all flex items-center gap-2" onclick="window.location.href='menu_video_edukasi_pengenalan_perangkat_komputer.html'">
+<span class="material-symbols-outlined" data-icon="play_circle">play_circle</span>
+                        Tonton Video
+                    </button>
+<button class="px-8 py-4 bg-primary text-on-primary font-label-bold text-label-bold rounded-xl border-4 border-on-primary-fixed-variant shadow-[4px_4px_0px_0px_rgba(0,76,105,1)] hover:translate-y-1 hover:shadow-[2px_2px_0px_0px_rgba(0,76,105,1)] transition-all flex items-center gap-2" onclick="window.location.href='pilih_kategori_materi_perangkat_komputer.html'">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                        Lihat Materi
+                    </button>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full flex justify-around items-center h-24 bg-surface-container-lowest border-t-4 border-primary-container z-50">
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="menu_utama_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined text-2xl" data-icon="home" data-weight="fill" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-bold text-label-bold mt-1">Beranda</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="pilih_kategori_materi_perangkat_komputer.html">
+<span class="material-symbols-outlined text-2xl" data-icon="menu_book" data-weight="fill" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+<span class="font-label-bold text-label-bold mt-1">Materi</span>
+</a>
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-xl px-6 py-2 border-2 border-primary shadow-[2px_2px_0px_0px_rgba(0,74,102,1)] hover:bg-surface-container-high transition-colors scale-95" href="eksplorasi_objek_3d_perangkat_komputer.html">
+<span class="material-symbols-outlined text-2xl" data-icon="3d_rotation" data-weight="fill" style="font-variation-settings: 'FILL' 1;">3d_rotation</span>
+<span class="font-label-bold text-label-bold mt-1">Objek 3D</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant p-2 hover:bg-surface-container-high transition-colors" href="kuis_perangkat_komputer.html">
+<span class="material-symbols-outlined text-2xl" data-icon="quiz" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span>
+<span class="font-label-bold text-label-bold mt-1">Kuis</span>
+</a>
+</nav>
+<script>
+var CLS_INACTIVE = 'dev-btn flex flex-col items-center justify-center gap-1 bg-surface text-on-surface rounded-xl p-2 border-3 border-outline-variant hover:bg-surface-variant transition-all';
+var CLS_ACTIVE   = 'dev-btn active-btn flex flex-col items-center justify-center gap-1 bg-secondary-container text-on-secondary-container rounded-xl p-2 border-3 border-secondary shadow-[3px_3px_0px_0px_rgba(113,93,0,1)] transition-all';
+
+var TAB_ACTIVE   = 'tab-btn active-tab flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-primary bg-primary-container text-on-primary-container transition-all';
+var TAB_INACTIVE = 'tab-btn flex-1 flex flex-col items-center justify-center py-2 font-label-bold text-label-bold text-xs rounded-t-lg border-2 border-b-0 border-transparent bg-surface text-on-surface-variant hover:bg-surface-variant transition-all';
+
+function gantiTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.add('hidden'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b) { b.className = TAB_INACTIVE; });
+  document.getElementById('panel-' + id).classList.remove('hidden');
+  btn.className = TAB_ACTIVE;
+}
+
+function pilihModel(btn) {
+  var viewer = document.getElementById('model-3d-komputer');
+  if (viewer) viewer.setAttribute('src', btn.dataset.src);
+
+  // Update info panel
+  var nameEl = document.getElementById('info-name');
+  nameEl.innerHTML = '<span class="material-symbols-outlined">' + btn.dataset.icon + '</span> ' + btn.dataset.name;
+  document.getElementById('info-desc').textContent = btn.dataset.desc;
+
+  // Reset all buttons then activate the clicked one
+  document.querySelectorAll('.dev-btn').forEach(function(b) { b.className = CLS_INACTIVE; });
+  btn.className = CLS_ACTIVE;
+}
+</script>
+</body></html>

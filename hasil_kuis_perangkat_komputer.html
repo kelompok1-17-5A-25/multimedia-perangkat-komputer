@@ -1,0 +1,337 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hasil Kuis - Hardware Hero</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "secondary-fixed": "#ffe173",
+                        "on-background": "#121c28",
+                        "tertiary-container": "#66c673",
+                        "on-primary-fixed": "#001e2c",
+                        "surface-variant": "#d9e3f4",
+                        "inverse-primary": "#7cd0ff",
+                        "surface-container-high": "#dfe9fa",
+                        "surface-dim": "#d1dbec",
+                        "error": "#ba1a1a",
+                        "primary-fixed": "#c4e7ff",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#554500",
+                        "on-primary-container": "#004a66",
+                        "on-error": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "surface-container-low": "#eef4ff",
+                        "inverse-on-surface": "#eaf1ff",
+                        "background": "#f8f9ff",
+                        "tertiary": "#006e29",
+                        "on-tertiary-fixed-variant": "#00531d",
+                        "primary": "#00668a",
+                        "on-surface-variant": "#3e484f",
+                        "surface-tint": "#00668a",
+                        "secondary": "#705d00",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "on-tertiary-container": "#00501c",
+                        "on-secondary-fixed": "#221b00",
+                        "on-primary-fixed-variant": "#004c69",
+                        "tertiary-fixed": "#96f89f",
+                        "secondary-container": "#fdd73b",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#d9e3f4",
+                        "tertiary-fixed-dim": "#7bdb85",
+                        "inverse-surface": "#27313e",
+                        "outline": "#6e7980",
+                        "surface-container": "#e5eeff",
+                        "on-tertiary-fixed": "#002107",
+                        "primary-container": "#3abef9",
+                        "outline-variant": "#bdc8d1",
+                        "surface": "#f8f9ff",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#e8c426",
+                        "on-surface": "#121c28",
+                        "primary-fixed-dim": "#7cd0ff",
+                        "on-secondary-container": "#715d00"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "gutter": "24px",
+                        "sm": "12px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Lexend"],
+                        "headline-lg": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-md": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "headline-xl": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600"}],
+                        "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "500"}],
+                        "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                        "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                        "headline-xl": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary-container selection:text-on-primary-container">
+<div class="flex min-h-screen w-full">
+<!-- Mobile Top App Bar (Visible on md:hidden) -->
+<header class="md:hidden bg-surface dark:bg-surface-container w-full top-0 sticky border-b-4 border-on-background shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] flex justify-between items-center px-margin-mobile py-base z-40 h-16">
+<span class="text-headline-lg-mobile font-headline-lg-mobile text-primary dark:text-primary-fixed tracking-tight">Hardware Hero</span>
+<div class="flex gap-sm">
+<span class="material-symbols-outlined text-primary dark:text-primary-fixed text-3xl">account_circle</span>
+<span class="material-symbols-outlined text-on-background text-3xl">menu</span>
+</div>
+</header>
+<!-- Desktop Side Navigation Bar (Hidden on md:hidden) -->
+<nav class="hidden md:flex bg-surface-container-low dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(18,28,40,1)] flex-col py-md gap-base z-50">
+<div class="px-gutter pb-md border-b-4 border-on-background mb-sm"><div class="flex items-center gap-sm"><img alt="Mascot Robot Hardware Hero" class="w-12 h-12 rounded-full border-2 border-on-background bg-secondary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYw7acSBqQRDvTYaJTgG7sucgGMZ6hM-2kpO9xKiwvrhM6PKFBTCnXpRbjV1WMMUg834HmVZDr3VHMCGhhdCJzp1TkmjaiQNhvt-z97XUJIwr3WwVuMVYa9a-aZfKDGlByonp2XVKOaVLYc6hUFFEeO0tV_bOeKnCBFC0p5aGKvr8CGli8UMDyYh-XtVKe2QqvbzjkDuPgrsCcHjmr-Nw_k_sW2iugh958pLhL3k5I8_Tzx6hn78DDMVrM7lF18PtgOvTkhmSFUw"/><div><h2 class="font-headline-md text-primary">Halo, Pahlawan!</h2><p class="font-label-bold text-label-bold text-on-surface-variant">Siap belajar hari ini?</p></div></div></div>
+<div class="flex-1 overflow-y-auto px-2"><a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_utama_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="home">home</span><span class="font-label-bold text-label-bold">Beranda</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="pilih_kategori_materi_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span><span class="font-label-bold text-label-bold">Materi</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="eksplorasi_objek_3d_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="3d_rotation">3d_rotation</span><span class="font-label-bold text-label-bold">Objek 3D</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_video_edukasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span><span class="font-label-bold text-label-bold">Video</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm bg-secondary-container text-on-secondary-container border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(18,28,40,1)] rounded-lg mx-2 my-1 scale-95 duration-100" href="kuis_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="quiz" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span><span class="font-label-bold text-label-bold">Kuis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="tentang_aplikasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="info">info</span><span class="font-label-bold text-label-bold">Tentang</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop min-h-screen flex flex-col gap-lg bg-background overflow-x-hidden">
+<!-- Page Header -->
+<div class="flex items-center justify-between w-full max-w-5xl mx-auto">
+<h1 class="font-headline-xl text-headline-xl text-on-background drop-shadow-[2px_2px_0px_rgba(18,28,40,1)]">Hasil Kuis</h1>
+<span class="material-symbols-outlined text-5xl text-primary drop-shadow-[2px_2px_0px_rgba(18,28,40,1)] hidden sm:block">stars</span>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-md max-w-5xl mx-auto w-full">
+<!-- Main Score Card (Span 7) -->
+<div class="col-span-1 lg:col-span-7 bg-surface-container-low border-4 border-on-background rounded-xl p-md shadow-[8px_8px_0px_0px_rgba(18,28,40,1)] flex flex-col justify-center gap-lg relative overflow-hidden">
+<!-- Decorative background element -->
+<div class="absolute -right-10 -bottom-10 opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-[200px]">military_tech</span>
+</div>
+<div class="z-10 flex flex-col gap-sm">
+<h2 class="font-headline-md text-headline-md text-on-surface-variant uppercase tracking-widest">Skor Anda</h2>
+<div class="flex items-end gap-2">
+<span id="skor-nilai" class="font-headline-xl text-[80px] leading-none text-primary drop-shadow-[4px_4px_0px_rgba(18,28,40,1)]">80</span>
+<span class="font-headline-md text-headline-md text-on-surface-variant mb-2">/ 100</span>
+</div>
+</div>
+<!-- Progress Bar Component -->
+<div class="z-10 flex flex-col gap-xs w-full">
+<div class="flex justify-between font-label-bold text-label-bold text-on-surface-variant">
+<span>Pencapaian</span>
+<span id="skor-persen">80%</span>
+</div>
+<div class="w-full h-8 bg-surface-variant border-4 border-on-background rounded-full overflow-hidden shadow-[inset_0px_4px_4px_rgba(0,0,0,0.1)] relative">
+<!-- Animated Striped Fill (CSS native) -->
+<div id="skor-bar" class="h-full bg-tertiary-container border-r-4 border-on-background" style="width: 80%;">
+<div class="w-full h-full opacity-30" style="background-image: linear-gradient(45deg, rgba(255,255,255,0.4) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 75%, transparent 75%, transparent); background-size: 20px 20px;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Illustration & Motivation Card (Span 5) -->
+<div class="col-span-1 lg:col-span-5 bg-secondary-fixed border-4 border-on-background rounded-xl p-md shadow-[8px_8px_0px_0px_rgba(18,28,40,1)] flex flex-col items-center justify-center text-center gap-sm">
+<div class="w-40 h-40 bg-surface rounded-full border-4 border-on-background shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] flex items-center justify-center overflow-hidden mb-4">
+<img alt="Maskot Hardware Hero Merayakan" class="w-[120%] h-[120%] object-cover object-center" data-alt="A cheerful, flat 2D cartoon illustration of a cute robot mascot holding a large, shiny gold trophy. The robot has a squishy, tactile design with bold black outlines. The background is a bright, solid yellow. Confetti is raining down. The overall aesthetic is joyful, educational, and inspired by high-quality children's animation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt6rvInlF5hGuShphCPFcwmZK3LgHjZoS-kgIDPbZXpUVYPHfjIakcu0Os-FpcQhx7f26wPMWgsqg6l7hMA_TrYRytyQUb2tBHhqeuSrHLekZ4TIwYquV47AYzjFiwn0V42ljYVAN1P8GrBLS2-KVN7XKXwZpvmhtlu2J-WyTHB6AydtWpI2qtRLyNu6OSiYbHW8Uji-6ZGDCaujTriTCjIgBNkBn4MFbo19H4g77xb1Cm3lztr86nrsfckObE3DNfBuguPzLihw"/>
+</div>
+<div class="bg-surface px-4 py-3 border-4 border-on-background rounded-xl shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] relative">
+<!-- Speech bubble tail -->
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 bg-surface border-t-4 border-l-4 border-on-background rotate-45"></div>
+<p id="motivasi-text" class="font-body-lg text-body-lg text-on-background font-bold relative z-10">Bagus! Kamu sudah memahami perangkat komputer.</p>
+</div>
+</div>
+<!-- Summary Stats Grid (Span 12) -->
+<div class="col-span-1 lg:col-span-12 grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Correct Card -->
+<div class="bg-tertiary-fixed border-4 border-on-background rounded-xl p-sm shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] flex items-center gap-md hover:-translate-y-1 transition-transform">
+<div class="w-12 h-12 bg-surface rounded-full border-4 border-on-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(18,28,40,1)]">
+<span class="material-symbols-outlined text-tertiary text-2xl" data-weight="fill">check_circle</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold text-on-tertiary-fixed-variant">Jawaban Benar</span>
+<span id="benar-count" class="font-headline-lg text-headline-lg text-on-background">8</span>
+</div>
+</div>
+<!-- Incorrect Card -->
+<div class="bg-error-container border-4 border-on-background rounded-xl p-sm shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] flex items-center gap-md hover:-translate-y-1 transition-transform">
+<div class="w-12 h-12 bg-surface rounded-full border-4 border-on-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(18,28,40,1)]">
+<span class="material-symbols-outlined text-error text-2xl" data-weight="fill">cancel</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold text-on-error-container">Jawaban Salah</span>
+<span id="salah-count" class="font-headline-lg text-headline-lg text-on-background">2</span>
+</div>
+</div>
+<!-- Total Card -->
+<div class="bg-primary-fixed border-4 border-on-background rounded-xl p-sm shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] flex items-center gap-md hover:-translate-y-1 transition-transform">
+<div class="w-12 h-12 bg-surface rounded-full border-4 border-on-background flex items-center justify-center shadow-[2px_2px_0px_0px_rgba(18,28,40,1)]">
+<span class="material-symbols-outlined text-primary text-2xl" data-weight="fill">format_list_numbered</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-bold text-label-bold text-on-primary-fixed-variant">Total Soal</span>
+<span id="total-count" class="font-headline-lg text-headline-lg text-on-background">10</span>
+</div>
+</div>
+</div>
+<!-- Action Buttons (Span 12) -->
+<div class="col-span-1 lg:col-span-12 flex flex-col sm:flex-row gap-sm sm:gap-md mt-sm justify-center">
+<button class="bg-secondary-container text-on-secondary-container font-label-bold text-label-bold px-md py-sm border-4 border-on-background rounded-xl shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] active:translate-y-[4px] active:translate-x-[4px] active:shadow-none hover:-translate-y-1 transition-all flex items-center justify-center gap-sm" onclick="window.location.href='kuis_perangkat_komputer.html'">
+<span class="material-symbols-outlined text-[20px]">refresh</span>
+                        Ulangi Kuis
+                    </button>
+<button class="bg-tertiary-container text-on-tertiary-container font-label-bold text-label-bold px-md py-sm border-4 border-on-background rounded-xl shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] active:translate-y-[4px] active:translate-x-[4px] active:shadow-none hover:-translate-y-1 transition-all flex items-center justify-center gap-sm" onclick="lihatPembahasan()">
+<span class="material-symbols-outlined text-[20px]">menu_book</span>
+                        Lihat Pembahasan
+                    </button>
+<button class="bg-surface text-on-surface font-label-bold text-label-bold px-md py-sm border-4 border-on-background rounded-xl shadow-[4px_4px_0px_0px_rgba(18,28,40,1)] active:translate-y-[4px] active:translate-x-[4px] active:shadow-none hover:-translate-y-1 transition-all flex items-center justify-center gap-sm" onclick="window.location.href='menu_utama_pengenalan_perangkat_komputer.html'">
+<span class="material-symbols-outlined text-[20px]">home</span>
+                        Kembali ke Menu Utama
+                    </button>
+</div>
+</div>
+</main>
+
+<!-- Pembahasan Modal -->
+<div id="modal-pembahasan" class="hidden fixed inset-0 z-50 items-center justify-center p-4" style="background:rgba(0,0,0,0.6)">
+  <div style="background:#eef4ff;border:4px solid #121c28;border-radius:16px;box-shadow:8px 8px 0 0 rgba(18,28,40,1);width:100%;max-width:640px;max-height:90vh;display:flex;flex-direction:column;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 24px;border-bottom:4px solid #121c28;flex-shrink:0;">
+      <h2 style="font-family:Quicksand;font-size:24px;font-weight:700;color:#00668a;">Pembahasan Soal</h2>
+      <button onclick="tutupPembahasan()" style="width:40px;height:40px;border-radius:50%;border:2px solid #121c28;background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;">
+        <span class="material-symbols-outlined" style="font-size:20px;">close</span>
+      </button>
+    </div>
+    <div id="pembahasan-list" style="flex:1;overflow-y:auto;padding:16px 24px;display:flex;flex-direction:column;gap:16px;"></div>
+  </div>
+</div>
+
+<script>
+function lihatPembahasan() {
+  var soalData = JSON.parse(localStorage.getItem('quiz_soal') || '[]');
+  var jawabanUser = JSON.parse(localStorage.getItem('quiz_jawaban') || '[]');
+  if (!soalData.length) { alert('Data pembahasan tidak tersedia. Coba kerjakan kuis terlebih dahulu.'); return; }
+  var HURUF = ['A','B','C','D'];
+  var container = document.getElementById('pembahasan-list');
+  container.innerHTML = '';
+  soalData.forEach(function(s, qi) {
+    var userAns = jawabanUser[qi];
+    var isBenar = userAns === s.jawaban;
+    var card = document.createElement('div');
+    card.style.cssText = 'border:4px solid #121c28;border-radius:12px;overflow:hidden;box-shadow:2px 2px 0 0 rgba(18,28,40,1);';
+    // Header
+    var hdr = document.createElement('div');
+    hdr.style.cssText = 'display:flex;align-items:center;gap:8px;padding:10px 16px;border-bottom:2px solid #121c28;background:' + (isBenar ? '#dcfce7' : '#fee2e2') + ';';
+    hdr.innerHTML = '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;color:' + (isBenar ? '#16a34a' : '#ef4444') + ';font-size:20px;">' + (isBenar ? 'check_circle' : 'cancel') + '</span>' +
+      '<span style="font-family:Lexend;font-size:14px;font-weight:600;color:' + (isBenar ? '#166534' : '#991b1b') + ';">Soal ' + (qi+1) + '</span>' +
+      '<span style="margin-left:auto;font-family:Lexend;font-size:12px;font-weight:600;color:' + (isBenar ? '#166534' : '#991b1b') + ';">' + (isBenar ? '✓ Benar' : '✗ Salah') + '</span>';
+    // Body
+    var body = document.createElement('div');
+    body.style.cssText = 'padding:14px 16px;background:#ffffff;';
+    var qText = document.createElement('p');
+    qText.style.cssText = 'font-family:Quicksand;font-size:15px;font-weight:600;color:#121c28;margin:0 0 12px 0;line-height:1.5;';
+    qText.textContent = s.soal;
+    body.appendChild(qText);
+    var choicesWrap = document.createElement('div');
+    choicesWrap.style.cssText = 'display:flex;flex-direction:column;gap:6px;';
+    s.pilihan.forEach(function(p, i) {
+      var isCorrect = (i === s.jawaban);
+      var isWrong = (i === userAns && !isBenar);
+      var choice = document.createElement('div');
+      choice.style.cssText = 'display:flex;align-items:center;gap:8px;padding:8px 12px;border-radius:8px;border:2px solid ' +
+        (isCorrect ? '#16a34a' : isWrong ? '#ef4444' : '#bdc8d1') + ';background:' +
+        (isCorrect ? '#dcfce7' : isWrong ? '#fee2e2' : '#f8f9ff') + ';';
+      var iconHtml = isCorrect
+        ? '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;color:#16a34a;font-size:18px;flex-shrink:0;">check_circle</span>'
+        : isWrong
+        ? '<span class="material-symbols-outlined" style="font-variation-settings:\'FILL\' 1;color:#ef4444;font-size:18px;flex-shrink:0;">cancel</span>'
+        : '<span style="width:18px;height:18px;flex-shrink:0;display:inline-block;"></span>';
+      choice.innerHTML = iconHtml + '<span style="font-family:Quicksand;font-size:14px;font-weight:500;color:' + (isCorrect ? '#166534' : isWrong ? '#991b1b' : '#3e484f') + ';">' + HURUF[i] + '. ' + p + '</span>';
+      choicesWrap.appendChild(choice);
+    });
+    body.appendChild(choicesWrap);
+    card.appendChild(hdr);
+    card.appendChild(body);
+    container.appendChild(card);
+  });
+  var modal = document.getElementById('modal-pembahasan');
+  modal.classList.remove('hidden');
+  modal.style.display = 'flex';
+}
+function tutupPembahasan() {
+  var modal = document.getElementById('modal-pembahasan');
+  modal.classList.add('hidden');
+  modal.style.display = '';
+}
+
+window.addEventListener('DOMContentLoaded', function() {
+    var skor = parseInt(localStorage.getItem('quiz_skor') || '0');
+    var benar = parseInt(localStorage.getItem('quiz_benar') || '0');
+    var salah = parseInt(localStorage.getItem('quiz_salah') || '0');
+    var total = parseInt(localStorage.getItem('quiz_total') || '10');
+    document.getElementById('skor-nilai').textContent = skor;
+    document.getElementById('skor-bar').style.width = skor + '%';
+    document.getElementById('skor-persen').textContent = skor + '%';
+    document.getElementById('benar-count').textContent = benar;
+    document.getElementById('salah-count').textContent = salah;
+    document.getElementById('total-count').textContent = total;
+    var pesan;
+    if (skor >= 90) pesan = 'Luar biasa! Kamu Pahlawan Perangkat Komputer!';
+    else if (skor >= 70) pesan = 'Bagus! Kamu sudah memahami perangkat komputer.';
+    else if (skor >= 50) pesan = 'Lumayan! Terus belajar dan kamu pasti bisa lebih baik!';
+    else pesan = 'Jangan menyerah! Pelajari lagi materinya dan coba kembali!';
+    document.getElementById('motivasi-text').textContent = pesan;
+});
+</script>
+</div>
+</body></html>

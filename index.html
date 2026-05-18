@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Pengenalan Perangkat Komputer - Mulai</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#ffffff",
+                        "on-background": "#121c28",
+                        "inverse-surface": "#27313e",
+                        "error-container": "#ffdad6",
+                        "background": "#f8f9ff",
+                        "tertiary": "#006e29",
+                        "secondary-container": "#fdd73b",
+                        "on-surface-variant": "#3e484f",
+                        "surface-dim": "#d1dbec",
+                        "on-secondary-fixed-variant": "#554500",
+                        "on-primary-fixed": "#001e2c",
+                        "on-tertiary-fixed-variant": "#00531d",
+                        "surface": "#f8f9ff",
+                        "tertiary-fixed-dim": "#7bdb85",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#bdc8d1",
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#66c673",
+                        "on-primary-fixed-variant": "#004c69",
+                        "secondary-fixed-dim": "#e8c426",
+                        "primary": "#00668a",
+                        "on-surface": "#121c28",
+                        "inverse-primary": "#7cd0ff",
+                        "surface-container-highest": "#d9e3f4",
+                        "tertiary-fixed": "#96f89f",
+                        "primary-fixed": "#c4e7ff",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-bright": "#f8f9ff",
+                        "secondary-fixed": "#ffe173",
+                        "primary-fixed-dim": "#7cd0ff",
+                        "on-error-container": "#93000a",
+                        "surface-tint": "#00668a",
+                        "outline": "#6e7980",
+                        "on-secondary-fixed": "#221b00",
+                        "secondary": "#705d00",
+                        "on-primary-container": "#004a66",
+                        "error": "#ba1a1a",
+                        "surface-variant": "#d9e3f4",
+                        "primary-container": "#3abef9",
+                        "on-tertiary-fixed": "#002107",
+                        "inverse-on-surface": "#eaf1ff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-container": "#715d00",
+                        "on-tertiary-container": "#00501c",
+                        "surface-container": "#e5eeff",
+                        "surface-container-high": "#dfe9fa",
+                        "surface-container-low": "#eef4ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xl": "80px",
+                        "margin-mobile": "16px",
+                        "base": "8px",
+                        "margin-desktop": "64px",
+                        "xs": "4px",
+                        "sm": "12px",
+                        "md": "24px",
+                        "lg": "48px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "label-bold": ["Lexend"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "body-md": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Quicksand"],
+                        "headline-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "label-bold": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.02em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "body-lg": ["20px", { "lineHeight": "1.6", "fontWeight": "500" }],
+                        "headline-xl": ["48px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body-md text-on-surface h-screen w-screen overflow-hidden flex flex-col justify-center items-center relative">
+<!-- Decorative Background Elements -->
+<div class="absolute inset-0 z-0 pointer-events-none opacity-50 flex items-center justify-center">
+<!-- Generative Background -->
+<img alt="" class="absolute w-full h-full object-cover blur-sm opacity-20" data-alt="A bright, cheerful 2D cartoon animation style background of a computer room or study desk. Soft, playful pastel blue and yellow colors dominate the scene. Floating educational elements like floppy disks, USB icons, and simple circuit patterns are scattered around. The environment feels safe, fun, and designed to reduce tech-anxiety for young learners, maintaining a high-quality educational television program aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6nS486jN9y6zFSgbfj20Pe3i_Z9_hlfmteh0K-ntPRYunPH7qchz2NBLkTAZfZUGpe_WqDgbSNKQ4xlF8xbapUmhilTcx5QNdRxxH-DtwYd0zwh8Qfz4qiSZ2evvNTbC3nTK7MHqndDDvMsHui8OAI_XTmmYXjlraugwR1dCsnsbLdAHu8AD8EONzZva4_sdfvhj5Wm_sKIxEqc8ihcsISHBDYcb88GL5T31VPpd0f_xf-LafojJjQ2t_ycKfsGLACJi7ferqNg"/>
+<!-- Floating icons simulated with simple CSS / static placement for visual interest -->
+<span class="material-symbols-outlined absolute top-1/4 left-1/4 text-primary-container text-[64px] opacity-30 transform -rotate-12">memory</span>
+<span class="material-symbols-outlined absolute bottom-1/3 right-1/4 text-secondary-container text-[80px] opacity-40 transform rotate-45">mouse</span>
+<span class="material-symbols-outlined absolute top-1/3 right-1/3 text-tertiary-container text-[48px] opacity-30">keyboard</span>
+</div>
+<!-- Main Content Container -->
+<main class="relative z-10 flex flex-col items-center justify-center max-w-[1280px] w-full px-margin-mobile md:px-margin-desktop text-center">
+<!-- Hero Illustration -->
+<div class="mb-sm md:mb-md max-w-xs md:max-w-sm w-full">
+<img alt="Kartun Komputer Desktop" class="w-full h-auto max-h-[38vh] object-contain drop-shadow-[0px_8px_0px_rgba(0,102,138,0.2)] rounded-2xl border-4 border-on-surface bg-surface-lowest p-sm" data-alt="A large, friendly 2D cartoon illustration of a complete desktop computer setup. It features a squishy, approachable monitor, keyboard, mouse, and CPU tower. The style is bold outlines, vibrant colors prioritizing primary blues and secondary yellows, resembling a high-quality interactive storybook. The hardware looks playful and tactile, avoiding any sterile or realistic industrial designs." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDw3Fq80d0dnSJsWROGRdyFtRNLGelDOUUHLfLnHFSmOCi5wCDL4NS3h-ZH9XrjwFJ6Pqp6DbbjBDoCtCt6UIuhpvf-gXhYW5l_xH3TQIy-56kpU1HI8qc5G9dZFxd0wrJMVk5lbfJY9Hb5NyusI83iQie_7Up8Y9HkNHkxWuJ_WSm08Gzbdf-M4VRXFlrd6VKtSntP6pPtz8XVL4GrEMKuxdNyb-8iShKsDgrXSK1qsYM0hG5PYDbTdiMTxyVySpURTIfFlB-keQ"/>
+</div>
+<!-- Typography Stack -->
+<div class="bg-surface-container-low border-4 border-primary rounded-xl p-sm md:p-md shadow-[8px_8px_0px_0px_rgba(0,102,138,1)] max-w-2xl w-full flex flex-col items-center gap-xs">
+<h1 class="font-headline-xl text-headline-lg-mobile md:text-headline-xl text-primary font-bold tracking-tight">
+                Pengenalan Perangkat Komputer
+            </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-md">
+                Belajar perangkat komputer secara interaktif
+            </p>
+<!-- Call to Action -->
+<button onclick="window.location.href='menu_utama_pengenalan_perangkat_komputer.html'" class="mt-sm bg-primary text-on-primary font-label-bold text-label-bold border-4 border-on-primary-fixed-variant rounded-full px-xl py-sm shadow-[0px_6px_0px_0px_rgba(0,76,105,1)] hover:translate-y-1 hover:shadow-[0px_2px_0px_0px_rgba(0,76,105,1)] transition-all active:translate-y-2 active:shadow-none flex items-center gap-xs cursor-pointer">
+                MULAI
+                <span class="material-symbols-outlined text-[20px]">play_arrow</span>
+</button>
+</div>
+</main>
+</body></html>

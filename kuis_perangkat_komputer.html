@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Kuis Perangkat Komputer - Hardware Hero</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#eaf1ff",
+                    "surface-tint": "#00668a",
+                    "on-secondary-fixed": "#221b00",
+                    "primary-fixed-dim": "#7cd0ff",
+                    "tertiary-fixed-dim": "#7bdb85",
+                    "on-tertiary-fixed-variant": "#00531d",
+                    "on-tertiary": "#ffffff",
+                    "on-surface-variant": "#3e484f",
+                    "on-secondary-fixed-variant": "#554500",
+                    "surface-bright": "#f8f9ff",
+                    "surface": "#f8f9ff",
+                    "outline-variant": "#bdc8d1",
+                    "background": "#f8f9ff",
+                    "on-tertiary-container": "#00501c",
+                    "outline": "#6e7980",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#3abef9",
+                    "error-container": "#ffdad6",
+                    "error": "#ba1a1a",
+                    "on-primary-fixed-variant": "#004c69",
+                    "inverse-primary": "#7cd0ff",
+                    "tertiary-container": "#66c673",
+                    "on-error": "#ffffff",
+                    "tertiary-fixed": "#96f89f",
+                    "secondary-container": "#fdd73b",
+                    "surface-container-high": "#dfe9fa",
+                    "on-surface": "#121c28",
+                    "on-primary-container": "#004a66",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-fixed": "#001e2c",
+                    "on-primary": "#ffffff",
+                    "tertiary": "#006e29",
+                    "surface-container-low": "#eef4ff",
+                    "surface-container-highest": "#d9e3f4",
+                    "primary-fixed": "#c4e7ff",
+                    "secondary-fixed": "#ffe173",
+                    "surface-container": "#e5eeff",
+                    "on-secondary": "#ffffff",
+                    "secondary": "#705d00",
+                    "on-background": "#121c28",
+                    "on-secondary-container": "#715d00",
+                    "surface-dim": "#d1dbec",
+                    "secondary-fixed-dim": "#e8c426",
+                    "surface-variant": "#d9e3f4",
+                    "on-tertiary-fixed": "#002107",
+                    "inverse-surface": "#27313e",
+                    "primary": "#00668a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "margin-mobile": "16px",
+                    "base": "8px",
+                    "lg": "48px",
+                    "xs": "4px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "margin-desktop": "64px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-xl": [
+                            "Quicksand"
+                    ],
+                    "label-bold": [
+                            "Lexend"
+                    ],
+                    "headline-lg": [
+                            "Quicksand"
+                    ],
+                    "headline-lg-mobile": [
+                            "Quicksand"
+                    ],
+                    "body-md": [
+                            "Quicksand"
+                    ],
+                    "headline-md": [
+                            "Quicksand"
+                    ],
+                    "body-lg": [
+                            "Quicksand"
+                    ]
+            },
+            "fontSize": {
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-bold": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ]
+            }
+    },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen flex flex-col md:flex-row">
+<!-- Top App Bar (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center w-full px-6 py-4 h-20 bg-surface border-b-4 border-primary shadow-[4px_4px_0px_0px_rgba(0,102,138,1)] z-50 fixed top-0">
+<div class="font-headline-lg text-headline-lg text-primary font-bold tracking-tight">Hardware Hero</div>
+<div class="flex gap-4">
+<button class="text-primary hover:bg-primary-container hover:text-on-primary-container transition-all duration-200 p-2 rounded-full active:translate-y-1 active:shadow-none transition-transform" data-icon="person">
+<span class="material-symbols-outlined">person</span>
+</button>
+</div>
+</header>
+<!-- SideNavBar (Desktop Only) -->
+<nav class="hidden md:flex bg-surface-container-low dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(18,28,40,1)] flex-col py-md gap-base z-50">
+<div class="px-gutter pb-md border-b-4 border-on-background mb-sm"><div class="flex items-center gap-sm"><img alt="Mascot Robot Hardware Hero" class="w-12 h-12 rounded-full border-2 border-on-background bg-secondary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYw7acSBqQRDvTYaJTgG7sucgGMZ6hM-2kpO9xKiwvrhM6PKFBTCnXpRbjV1WMMUg834HmVZDr3VHMCGhhdCJzp1TkmjaiQNhvt-z97XUJIwr3WwVuMVYa9a-aZfKDGlByonp2XVKOaVLYc6hUFFEeO0tV_bOeKnCBFC0p5aGKvr8CGli8UMDyYh-XtVKe2QqvbzjkDuPgrsCcHjmr-Nw_k_sW2iugh958pLhL3k5I8_Tzx6hn78DDMVrM7lF18PtgOvTkhmSFUw"/><div><h2 class="font-headline-md text-primary">Halo, Pahlawan!</h2><p class="font-label-bold text-label-bold text-on-surface-variant">Siap belajar hari ini?</p></div></div></div>
+<div class="flex-1 overflow-y-auto px-2"><a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_utama_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="home">home</span><span class="font-label-bold text-label-bold">Beranda</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="pilih_kategori_materi_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span><span class="font-label-bold text-label-bold">Materi</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="eksplorasi_objek_3d_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="3d_rotation">3d_rotation</span><span class="font-label-bold text-label-bold">Objek 3D</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="menu_video_edukasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="videocam">videocam</span><span class="font-label-bold text-label-bold">Video</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm bg-secondary-container text-on-secondary-container border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(18,28,40,1)] rounded-lg mx-2 my-1 scale-95 duration-100" href="kuis_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="quiz" data-weight="fill" style="font-variation-settings: 'FILL' 1;">quiz</span><span class="font-label-bold text-label-bold">Kuis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-surface-variant rounded-lg mx-2 my-1 hover:bg-primary-container hover:text-on-primary-container transition-all" href="tentang_aplikasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" data-icon="info">info</span><span class="font-label-bold text-label-bold">Tentang</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-64 pt-24 pb-24 md:pt-12 px-6 md:px-12 flex flex-col items-center">
+<!-- Header Section -->
+<div class="w-full max-w-3xl mb-6 flex justify-between items-center border-b-4 border-outline-variant pb-4">
+<div>
+<h2 class="font-headline-xl text-headline-xl text-primary font-bold">Kuis Perangkat Komputer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-xl">Jawab pertanyaan berikut untuk menguji pemahamanmu tentang perangkat komputer.</p>
+</div>
+<div class="hidden lg:block w-20 h-20 bg-secondary-container rounded-full border-4 border-secondary overflow-hidden shrink-0 shadow-[4px_4px_0px_0px_rgba(113,93,0,1)] ml-4">
+<img alt="Robot Mascot" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmFNBGVx7KsG7a2_YDjvUHeP6ZLUfj6qYvMMqyE8Jt8dtZhwQ4vWARYpZkxlBWLfyWfYdpcaGIt0PTskw2MIwpV-qj0I16j64pzpIwKx-sCwUnCAcefCHud-lip-QCTp7yYuiDKKYTdqBta3-buDBP8ExCb23wzdHb6tXjO1Tnvdnw8n3aXVgfm8LeBsIM6wEextHaJQCxO9mNhyYYpPpkQafVWueklJTrY8qkxih4KK5YhXwuNfU6iKcv6nn03bqCC37LDowiaQ"/>
+</div>
+</div>
+<!-- Quiz Container -->
+<div class="w-full max-w-3xl bg-surface-container-lowest border-4 border-outline rounded-2xl p-6 shadow-[8px_8px_0px_0px_rgba(110,121,128,1)] flex flex-col gap-5">
+<!-- Progress & Score -->
+<div class="flex justify-between items-center w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-2xl" style="font-variation-settings: 'FILL' 1;">flag</span>
+<span id="soal-counter" class="font-label-bold text-label-bold text-on-surface">Soal 1 dari 10</span>
+</div>
+<div id="skor-display" class="bg-tertiary-container border-3 border-tertiary text-on-tertiary-container font-label-bold text-label-bold px-4 py-1 rounded-full shadow-[2px_2px_0px_0px_rgba(0,110,41,1)]">
+                    Skor: 0
+                </div>
+</div>
+<!-- Progress Bar -->
+<div class="w-full h-4 bg-surface-variant rounded-full border-2 border-outline overflow-hidden relative">
+<div id="progress-bar" class="absolute left-0 top-0 h-full bg-tertiary border-r-2 border-outline transition-all duration-500 rounded-r-full" style="width:10%"></div>
+</div>
+<!-- Question Area -->
+<div class="bg-primary-container border-4 border-primary rounded-xl p-5 shadow-[4px_4px_0px_0px_rgba(0,102,138,1)] relative mt-2">
+<div class="absolute -top-5 -left-5 bg-secondary text-on-secondary w-10 h-10 rounded-full flex items-center justify-center font-headline-md text-headline-md border-4 border-on-secondary shadow-[2px_2px_0px_0px_rgba(113,93,0,1)]">
+                    ?
+                </div>
+<p id="pertanyaan-text" class="font-headline-md text-headline-md text-on-primary-container text-center px-4 leading-relaxed">
+                    Perangkat yang digunakan untuk mengetik adalah?
+                </p>
+</div>
+<!-- Answer Choices -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<button id="btn-A" onclick="pilihJawaban(0)" class="bg-surface-container-high border-4 border-outline hover:bg-primary-container hover:border-primary text-on-surface font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-3 text-left group">
+<div class="w-8 h-8 bg-white text-on-surface border-2 border-outline rounded-full flex items-center justify-center font-bold text-sm shrink-0 group-hover:border-primary">A</div>
+<span data-ans class="font-body-md text-body-md">Monitor</span>
+</button>
+<button id="btn-B" onclick="pilihJawaban(1)" class="bg-surface-container-high border-4 border-outline hover:bg-primary-container hover:border-primary text-on-surface font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-3 text-left group">
+<div class="w-8 h-8 bg-white text-on-surface border-2 border-outline rounded-full flex items-center justify-center font-bold text-sm shrink-0 group-hover:border-primary">B</div>
+<span data-ans class="font-body-md text-body-md">Mouse</span>
+</button>
+<button id="btn-C" onclick="pilihJawaban(2)" class="bg-surface-container-high border-4 border-outline hover:bg-primary-container hover:border-primary text-on-surface font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-3 text-left group">
+<div class="w-8 h-8 bg-white text-on-surface border-2 border-outline rounded-full flex items-center justify-center font-bold text-sm shrink-0 group-hover:border-primary">C</div>
+<span data-ans class="font-body-md text-body-md">Keyboard</span>
+</button>
+<button id="btn-D" onclick="pilihJawaban(3)" class="bg-surface-container-high border-4 border-outline hover:bg-primary-container hover:border-primary text-on-surface font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-3 text-left group">
+<div class="w-8 h-8 bg-white text-on-surface border-2 border-outline rounded-full flex items-center justify-center font-bold text-sm shrink-0 group-hover:border-primary">D</div>
+<span data-ans class="font-body-md text-body-md">Printer</span>
+</button>
+</div>
+<!-- Action Buttons -->
+<div class="flex justify-between gap-4 pt-4 border-t-4 border-outline-variant">
+<button id="btn-kembali-nav" onclick="kembaliSoal()" class="bg-surface border-4 border-outline text-on-surface font-label-bold text-label-bold py-3 px-6 rounded-xl shadow-[0px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-2" style="visibility:hidden">
+<span class="material-symbols-outlined">arrow_back</span>Kembali
+                </button>
+<button id="btn-selanjutnya" onclick="selanjutnya()" class="bg-primary border-4 border-[#004c69] text-on-primary font-label-bold text-label-bold py-3 px-8 rounded-xl shadow-[0px_4px_0px_0px_rgba(0,76,105,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-2 ml-auto">
+                    Selanjutnya<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+</main>
+<script>
+var soalData = [
+    { soal: 'Perangkat yang digunakan untuk mengetik adalah?', pilihan: ['Monitor','Keyboard','Printer','Speaker'], jawaban: 1 },
+    { soal: 'Perangkat yang digunakan untuk menggerakkan kursor adalah?', pilihan: ['Mouse','RAM','SSD','Printer'], jawaban: 0 },
+    { soal: 'Perangkat yang menampilkan hasil visual komputer adalah?', pilihan: ['Scanner','Monitor','Keyboard','Flashdisk'], jawaban: 1 },
+    { soal: 'Perangkat yang digunakan untuk mencetak dokumen adalah?', pilihan: ['Printer','Mouse','CPU','Webcam'], jawaban: 0 },
+    { soal: 'Perangkat yang berfungsi menyimpan data dengan cepat adalah?', pilihan: ['SSD','Speaker','Monitor','Microphone'], jawaban: 0 },
+    { soal: 'Perangkat yang digunakan untuk merekam suara adalah?', pilihan: ['Microphone','VGA Card','Projector','Keyboard'], jawaban: 0 },
+    { soal: 'Perangkat yang berfungsi mengolah data adalah?', pilihan: ['CPU','Printer','Headphone','Flashdisk'], jawaban: 0 },
+    { soal: 'Perangkat yang digunakan untuk memindai dokumen adalah?', pilihan: ['Scanner','Speaker','Monitor','Hard disk'], jawaban: 0 },
+    { soal: 'Perangkat yang menghasilkan suara adalah?', pilihan: ['Speaker','Keyboard','RAM','Mouse'], jawaban: 0 },
+    { soal: 'Perangkat yang menyimpan data secara portabel adalah?', pilihan: ['Flashdisk','Monitor','Projector','Webcam'], jawaban: 0 }
+];
+var BTN_BASE = 'bg-surface-container-high border-4 border-outline hover:bg-primary-container hover:border-primary text-on-surface font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-3 text-left group';
+var BTN_CORRECT = 'border-4 border-green-600 bg-green-100 text-green-900 font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(22,163,74,1)] transition-all flex items-center gap-3 text-left';
+var BTN_WRONG = 'border-4 border-red-500 bg-red-100 text-red-900 font-label-bold text-label-bold py-4 px-5 rounded-xl shadow-[4px_4px_0px_0px_rgba(239,68,68,1)] transition-all flex items-center gap-3 text-left';
+
+// Acak soal & pilihan jawaban tiap sesi
+(function shuffle() {
+    for (var i = soalData.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = soalData[i]; soalData[i] = soalData[j]; soalData[j] = tmp;
+    }
+    soalData.forEach(function(s) {
+        var correct = s.pilihan[s.jawaban];
+        for (var i = s.pilihan.length - 1; i > 0; i--) {
+            var j = Math.floor(Math.random() * (i + 1));
+            var tmp = s.pilihan[i]; s.pilihan[i] = s.pilihan[j]; s.pilihan[j] = tmp;
+        }
+        s.jawaban = s.pilihan.indexOf(correct);
+    });
+})();
+
+var currentSoal = 0;
+var skor = 0;
+var sudahJawab = false;
+var jawabanUser = [];
+var IDS = ['A','B','C','D'];
+
+function tampilkanSoal(idx) {
+    var s = soalData[idx];
+    document.getElementById('soal-counter').textContent = 'Soal ' + (idx+1) + ' dari ' + soalData.length;
+    document.getElementById('skor-display').textContent = 'Skor: ' + skor;
+    document.getElementById('progress-bar').style.width = Math.round(((idx+1)/soalData.length)*100) + '%';
+    document.getElementById('pertanyaan-text').textContent = s.soal;
+    IDS.forEach(function(id, i) {
+        var btn = document.getElementById('btn-' + id);
+        btn.querySelector('[data-ans]').textContent = s.pilihan[i];
+        btn.className = BTN_BASE;
+        btn.disabled = false;
+    });
+    sudahJawab = false;
+    var btnNext = document.getElementById('btn-selanjutnya');
+    btnNext.innerHTML = (idx === soalData.length-1)
+        ? '<span class="material-symbols-outlined">check_circle</span> Selesai'
+        : 'Selanjutnya <span class="material-symbols-outlined">arrow_forward</span>';
+    document.getElementById('btn-kembali-nav').style.visibility = (idx === 0) ? 'hidden' : 'visible';
+}
+
+function pilihJawaban(idx) {
+    if (sudahJawab) return;
+    sudahJawab = true;
+    jawabanUser[currentSoal] = idx;
+    var benar = idx === soalData[currentSoal].jawaban;
+    if (benar) skor++;
+    IDS.forEach(function(id, i) {
+        var btn = document.getElementById('btn-' + id);
+        btn.disabled = true;
+        if (i === soalData[currentSoal].jawaban) {
+            btn.className = BTN_CORRECT;
+        } else if (i === idx && !benar) {
+            btn.className = BTN_WRONG;
+        }
+    });
+    document.getElementById('skor-display').textContent = 'Skor: ' + skor;
+}
+
+function kembaliSoal() {
+    if (currentSoal > 0) { currentSoal--; tampilkanSoal(currentSoal); }
+}
+
+function selanjutnya() {
+    if (!sudahJawab) { alert('Pilih jawaban terlebih dahulu!'); return; }
+    if (currentSoal < soalData.length-1) {
+        currentSoal++;
+        tampilkanSoal(currentSoal);
+    } else {
+        var benar = skor;
+        var salah = soalData.length - benar;
+        var nilaiAkhir = Math.round((benar/soalData.length)*100);
+        localStorage.setItem('quiz_skor', nilaiAkhir);
+        localStorage.setItem('quiz_benar', benar);
+        localStorage.setItem('quiz_salah', salah);
+        localStorage.setItem('quiz_total', soalData.length);
+        localStorage.setItem('quiz_jawaban', JSON.stringify(jawabanUser));
+        localStorage.setItem('quiz_soal', JSON.stringify(soalData));
+        window.location.href = 'hasil_kuis_perangkat_komputer.html';
+    }
+}
+
+tampilkanSoal(0);
+</script>
+</body></html>

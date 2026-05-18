@@ -1,0 +1,262 @@
+﻿<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Video Edukasi Perangkat Proses - Hardware Hero</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@600&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-fixed": "#ffe173",
+                    "on-surface-variant": "#3e484f",
+                    "on-secondary": "#ffffff",
+                    "on-primary": "#ffffff",
+                    "surface-container-high": "#dfe9fa",
+                    "surface-bright": "#f8f9ff",
+                    "surface-dim": "#d1dbec",
+                    "primary-fixed": "#c4e7ff",
+                    "on-tertiary-container": "#00501c",
+                    "outline": "#6e7980",
+                    "inverse-surface": "#27313e",
+                    "tertiary-fixed-dim": "#7bdb85",
+                    "inverse-on-surface": "#eaf1ff",
+                    "tertiary": "#006e29",
+                    "surface-container-highest": "#d9e3f4",
+                    "on-tertiary-fixed-variant": "#00531d",
+                    "surface-tint": "#00668a",
+                    "secondary-fixed-dim": "#e8c426",
+                    "surface-variant": "#d9e3f4",
+                    "surface-container": "#e5eeff",
+                    "on-tertiary": "#ffffff",
+                    "on-background": "#121c28",
+                    "inverse-primary": "#7cd0ff",
+                    "tertiary-container": "#66c673",
+                    "background": "#f8f9ff",
+                    "error": "#ba1a1a",
+                    "surface-container-low": "#eef4ff",
+                    "primary-fixed-dim": "#7cd0ff",
+                    "on-surface": "#121c28",
+                    "tertiary-fixed": "#96f89f",
+                    "on-primary-fixed-variant": "#004c69",
+                    "on-secondary-fixed-variant": "#554500",
+                    "on-error-container": "#93000a",
+                    "primary-container": "#3abef9",
+                    "outline-variant": "#bdc8d1",
+                    "surface": "#f8f9ff",
+                    "on-primary-container": "#004a66",
+                    "secondary-container": "#fdd73b",
+                    "on-tertiary-fixed": "#002107",
+                    "on-secondary-fixed": "#221b00",
+                    "error-container": "#ffdad6",
+                    "primary": "#00668a",
+                    "secondary": "#705d00",
+                    "on-error": "#ffffff",
+                    "surface-container-lowest": "#ffffff",
+                    "on-secondary-container": "#715d00",
+                    "on-primary-fixed": "#001e2c"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "xs": "4px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "gutter": "24px",
+                    "md": "24px",
+                    "margin-mobile": "16px",
+                    "margin-desktop": "64px"
+            },
+            "fontFamily": {
+                    "headline-xl": [
+                            "Quicksand"
+                    ],
+                    "label-bold": [
+                            "Lexend"
+                    ],
+                    "body-md": [
+                            "Quicksand"
+                    ],
+                    "body-lg": [
+                            "Quicksand"
+                    ],
+                    "headline-md": [
+                            "Quicksand"
+                    ],
+                    "headline-lg": [
+                            "Quicksand"
+                    ],
+                    "headline-lg-mobile": [
+                            "Quicksand"
+                    ]
+            },
+            "fontSize": {
+                    "headline-xl": [
+                            "48px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-bold": [
+                            "14px",
+                            {
+                                    "lineHeight": "1.0",
+                                    "letterSpacing": "0.02em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "body-lg": [
+                            "20px",
+                            {
+                                    "lineHeight": "1.6",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-md": [
+                            "24px",
+                            {
+                                    "lineHeight": "1.3",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "headline-lg": [
+                            "32px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "headline-lg-mobile": [
+                            "28px",
+                            {
+                                    "lineHeight": "1.2",
+                                    "fontWeight": "700"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .block-shadow {
+            box-shadow: 4px 4px 0px 0px rgba(0,102,138,1);
+        }
+        .block-shadow-sm {
+            box-shadow: 2px 2px 0px 0px rgba(0,102,138,1);
+        }
+        .block-shadow-secondary {
+            box-shadow: 4px 4px 0px 0px rgba(113,93,0,1);
+        }
+        .block-shadow-tertiary {
+            box-shadow: 4px 4px 0px 0px rgba(0,83,29,1);
+        }
+        .neo-border {
+            border-width: 4px;
+            border-color: #001e2c;
+        }
+        .neo-border-sm {
+            border-width: 3px;
+            border-color: #001e2c;
+        }
+        
+        .active-nav-item {
+            box-shadow: 2px 2px 0px 0px rgba(113,93,0,1);
+        }
+        
+        button:active, a:active.btn {
+            transform: translateY(4px) translateX(4px);
+            box-shadow: 0px 0px 0px 0px rgba(0,0,0,1) !important;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation (Mobile Only) -->
+<header class="md:hidden flex justify-between items-center w-full px-6 py-4 h-20 bg-surface border-b-4 border-primary shadow-[4px_4px_0px_0px_rgba(0,102,138,1)] fixed top-0 left-0 z-50">
+<div class="font-headline-md text-primary font-bold">Hardware Hero</div>
+<button class="p-2 rounded-lg text-primary bg-surface-container shadow-[2px_2px_0px_0px_rgba(0,102,138,1)]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Side Navigation (Desktop) -->
+<nav class="hidden md:flex bg-surface-container-low dark:bg-inverse-surface h-screen w-64 fixed left-0 top-0 border-r-4 border-on-background shadow-[4px_0px_0px_0px_rgba(18,28,40,1)] flex-col py-md gap-base z-50">
+<div class="px-gutter pb-md border-b-4 border-on-background mb-sm"><div class="flex items-center gap-sm"><img alt="Mascot Robot Hardware Hero" class="w-12 h-12 rounded-full border-2 border-on-background bg-secondary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAYw7acSBqQRDvTYaJTgG7sucgGMZ6hM-2kpO9xKiwvrhM6PKFBTCnXpRbjV1WMMUg834HmVZDr3VHMCGhhdCJzp1TkmjaiQNhvt-z97XUJIwr3WwVuMVYa9a-aZfKDGlByonp2XVKOaVLYc6hUFFEeO0tV_bOeKnCBFC0p5aGKvr8CGli8UMDyYh-XtVKe2QqvbzjkDuPgrsCcHjmr-Nw_k_sW2iugh958pLhL3k5I8_Tzx6hn78DDMVrM7lF18PtgOvTkhmSFUw"/><div><h2 class="font-headline-md text-primary">Halo, Pahlawan!</h2><p class="font-label-bold text-label-bold text-on-surface-variant">Siap belajar hari ini?</p></div></div></div>
+<div class="flex-1 overflow-y-auto px-2">
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="menu_utama_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined">home</span><span class="font-label-bold text-label-bold">Beranda</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="pilih_kategori_materi_perangkat_komputer.html">
+<span class="material-symbols-outlined">menu_book</span><span class="font-label-bold text-label-bold">Materi</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="eksplorasi_objek_3d_perangkat_komputer.html">
+<span class="material-symbols-outlined">3d_rotation</span><span class="font-label-bold text-label-bold">Objek 3D</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm bg-secondary-container text-on-secondary-container border-2 border-on-background shadow-[2px_2px_0px_0px_rgba(18,28,40,1)] rounded-lg mx-2 my-1 scale-95" href="menu_video_edukasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">videocam</span><span class="font-label-bold text-label-bold">Video</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="kuis_perangkat_komputer.html">
+<span class="material-symbols-outlined">quiz</span><span class="font-label-bold text-label-bold">Kuis</span>
+</a>
+<a class="flex items-center gap-sm px-sm py-sm text-on-surface-variant hover:bg-primary-container hover:text-on-primary-container rounded-lg mx-2 my-1 transition-all" href="tentang_aplikasi_pengenalan_perangkat_komputer.html">
+<span class="material-symbols-outlined">info</span><span class="font-label-bold text-label-bold">Tentang</span>
+</a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 md:ml-64 p-margin-mobile md:p-margin-desktop pb-24 pt-20 md:pt-0">
+<div class="max-w-4xl mx-auto flex flex-col gap-6">
+<!-- Header -->
+<div class="flex items-center gap-4">
+<button class="bg-surface-container border-4 border-outline rounded-full p-2 hover:bg-primary-container hover:border-primary transition-all shadow-[2px_2px_0px_0px_rgba(110,121,128,1)] shrink-0 active:translate-y-1" onclick="window.location.href='menu_video_edukasi_pengenalan_perangkat_komputer.html'">
+<span class="material-symbols-outlined text-primary">arrow_back</span>
+</button>
+<h1 class="font-headline-lg text-headline-lg text-primary font-bold">Video Edukasi Perangkat Proses</h1>
+</div>
+<!-- Video Card -->
+<div class="bg-surface-container-lowest border-4 border-outline rounded-xl shadow-[6px_6px_0px_0px_rgba(110,121,128,1)] overflow-hidden">
+<div class="aspect-video bg-black">
+<video controls class="w-full h-full" style="display:block">
+<source src="assets/video/proses.mp4" type="video/mp4">
+Video tidak dapat diputar. Silakan perbarui browser Anda.
+</video>
+</div>
+<div class="p-5 border-t-4 border-outline">
+<h2 class="font-headline-md text-headline-md text-on-surface mb-2">Mengenal Perangkat Proses Komputer</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Video ini menjelaskan perangkat proses yang berfungsi mengolah data dan menjalankan instruksi pada komputer, seperti CPU, RAM, dan Motherboard.</p>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap gap-4 items-center">
+<button class="bg-primary text-on-primary font-label-bold text-label-bold py-3 px-6 rounded-xl border-4 border-[#004c69] shadow-[4px_4px_0px_0px_rgba(0,76,105,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-2" onclick="window.location.href='detail_materi_perangkat_proses.html'">
+<span class="material-symbols-outlined">menu_book</span> Lihat Materi
+</button>
+<button class="bg-surface-container-lowest text-primary font-label-bold text-label-bold py-3 px-6 rounded-xl border-4 border-primary shadow-[4px_4px_0px_0px_rgba(0,102,138,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-2 hover:bg-surface-container" onclick="window.location.href='eksplorasi_objek_3d_perangkat_proses.html'">
+<span class="material-symbols-outlined">view_in_ar</span> Lihat Objek 3D
+</button>
+<button class="bg-surface text-on-surface font-label-bold text-label-bold py-3 px-6 rounded-xl border-4 border-outline shadow-[4px_4px_0px_0px_rgba(110,121,128,1)] active:translate-y-1 active:shadow-none transition-all flex items-center gap-2 hover:bg-surface-variant ml-auto" onclick="window.location.href='menu_video_edukasi_pengenalan_perangkat_komputer.html'">
+<span class="material-symbols-outlined">arrow_back</span> Kembali
+</button>
+</div>
+</div>
+</main>
+</body></html>
