@@ -1,0 +1,1629 @@
+﻿<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makalah Sistem Multimedia - Aplikasi Multimedia Interaktif Pengenalan Perangkat Komputer</title>
+  <style>
+    /* ============================================================
+       PRINT / WORD-READY STYLESHEET
+       Font: Times New Roman, size 12pt
+       Margin: 4cm kiri, 3cm kanan/atas/bawah (standar makalah Indonesia)
+    ============================================================ */
+    @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 12pt;
+      line-height: 2;
+      color: #000;
+      background: #e8e8e8;
+    }
+
+    .page {
+      background: #fff;
+      width: 210mm;
+      min-height: 297mm;
+      margin: 20px auto;
+      padding: 3cm 3cm 3cm 4cm;
+    }
+
+    /* ---- TEKS ---- */
+    p { text-align: justify; margin-bottom: 0.5em; text-indent: 1.27cm; }
+    p.no-indent { text-indent: 0; }
+    p.center { text-align: center; text-indent: 0; }
+
+    /* ---- HEADING ---- */
+    h1, h2, h3, h4 {
+      font-family: "Times New Roman", Times, serif;
+      color: #000;
+      text-align: center;
+      text-indent: 0;
+      line-height: 1.4;
+    }
+    h1 { font-size: 14pt; font-weight: bold; text-transform: uppercase; margin-bottom: 6pt; }
+    h2 { font-size: 13pt; font-weight: bold; text-transform: uppercase; margin-top: 18pt; margin-bottom: 6pt; }
+    h3 { font-size: 12pt; font-weight: bold; text-align: left; margin-top: 12pt; margin-bottom: 4pt; }
+    h4 { font-size: 12pt; font-weight: bold; text-align: left; margin-top: 8pt; margin-bottom: 4pt; }
+
+    /* Sub-bab rata kiri */
+    .sub-bab { text-align: left; text-indent: 0; }
+
+    /* ---- HALAMAN JUDUL ---- */
+    .cover { text-align: center; }
+    .cover h1 { font-size: 14pt; text-transform: uppercase; }
+    .cover .subtitle { font-size: 12pt; font-weight: bold; margin: 8pt 0; }
+    .cover .logo-wrapper { margin: 24pt 0 16pt; }
+    .cover .logo { width: 80px; height: 80px; }
+    .cover .keterangan { font-size: 12pt; line-height: 1.8; }
+    .cover .divider { border-top: 2px solid #000; margin: 10pt 0; }
+
+    /* ---- DAFTAR ISI ---- */
+    .toc-item { display: flex; justify-content: space-between; margin-bottom: 2pt; }
+    .toc-item .dots { flex: 1; border-bottom: 1px dotted #555; margin: 0 4pt 4pt; }
+    .toc-indent { padding-left: 1.5cm; }
+    .toc-indent2 { padding-left: 3cm; }
+
+    /* ---- TABEL ---- */
+    table { width: 100%; border-collapse: collapse; margin: 12pt 0; font-size: 11pt; }
+    th, td { border: 1px solid #333; padding: 5pt 8pt; vertical-align: top; }
+    th { background: #dde3ee; font-weight: bold; text-align: center; }
+    td { text-align: left; }
+    .tabel-caption { text-align: center; font-weight: bold; margin: 8pt 0 4pt; font-size: 12pt; }
+
+    /* ---- KODE ---- */
+    pre, code {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10pt;
+      background: #f4f4f4;
+      border-left: 3px solid #00668a;
+      padding: 8pt 12pt;
+      display: block;
+      white-space: pre-wrap;
+      word-break: break-word;
+      margin: 8pt 0 8pt 0;
+      line-height: 1.5;
+    }
+    .code-caption { font-size: 11pt; text-align: center; font-style: italic; margin-bottom: 6pt; }
+
+    /* ---- FLOWCHART ASCII ---- */
+    .flowchart {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 10pt;
+      line-height: 1.6;
+      background: #f8f8f8;
+      border: 1px solid #ccc;
+      padding: 12pt;
+      margin: 10pt 0;
+      display: inline-block;
+      white-space: pre;
+    }
+
+      .flowchart-figure {
+        margin: 14pt 0 18pt;
+        text-align: center;
+      }
+
+      .flowchart-placeholder {
+        border: 1px solid #666;
+        background: #f7f7f7;
+        min-height: 180pt;
+        padding: 18pt;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        font-size: 11pt;
+        line-height: 1.7;
+      }
+
+      .flowchart-placeholder strong {
+        display: block;
+        margin-bottom: 4pt;
+      }
+
+      .flowchart-caption {
+        text-align: center;
+        font-style: italic;
+        font-size: 11pt;
+        margin-top: 6pt;
+        margin-bottom: 4pt;
+        text-indent: 0;
+      }
+
+      .flowchart-description {
+        text-indent: 0;
+        margin-bottom: 0;
+      }
+
+    /* ---- DAFTAR PUSTAKA ---- */
+    .ref-item { margin-bottom: 8pt; padding-left: 2.54cm; text-indent: -2.54cm; text-align: justify; }
+
+    /* ---- UTILITIES ---- */
+    .page-break { page-break-after: always; }
+    .text-bold { font-weight: bold; }
+    .mt-12 { margin-top: 12pt; }
+    .mt-18 { margin-top: 18pt; }
+    .mt-6  { margin-top: 6pt; }
+    ul, ol { margin: 4pt 0 4pt 2cm; line-height: 1.8; }
+    li { margin-bottom: 2pt; }
+
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; padding: 3cm 3cm 3cm 4cm; box-shadow: none; }
+      .page-break { page-break-after: always; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     HALAMAN JUDUL
+============================================================ -->
+<div class="page">
+  <div class="cover">
+    <p class="center" style="font-size:12pt; font-weight:bold;">MAKALAH</p>
+    <p class="center" style="font-size:12pt; font-weight:bold;">MATA KULIAH SISTEM MULTIMEDIA</p>
+    <br/>
+    <div class="divider"></div>
+    <br/>
+    <h1 style="font-size:14pt; line-height:1.5;">
+      APLIKASI MULTIMEDIA INTERAKTIF PENGENALAN<br/>
+      PERANGKAT KOMPUTER BERBASIS WEB
+    </h1>
+    <br/>
+    <div class="divider"></div>
+    <br/>
+    <!-- Ikon komputer SVG sederhana sebagai pengganti logo -->
+    <div class="logo-wrapper">
+      <svg xmlns="http://www.w3.org/2000/svg" width="90" height="90" viewBox="0 0 24 24" fill="none"
+           stroke="#00668a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+        <line x1="8" y1="21" x2="16" y2="21"></line>
+        <line x1="12" y1="17" x2="12" y2="21"></line>
+      </svg>
+    </div>
+    <br/>
+    <p class="center" style="text-indent:0; font-size:12pt;">Disusun Oleh:</p>
+    <br/>
+    <div class="keterangan">
+      <p class="center" style="text-indent:0;">[Nama Anggota 1] &nbsp;|&nbsp; NIM: [NIM 1]</p>
+      <p class="center" style="text-indent:0;">[Nama Anggota 2] &nbsp;|&nbsp; NIM: [NIM 2]</p>
+      <p class="center" style="text-indent:0;">[Nama Anggota 3] &nbsp;|&nbsp; NIM: [NIM 3]</p>
+      <p class="center" style="text-indent:0;">[Nama Anggota 4] &nbsp;|&nbsp; NIM: [NIM 4]</p>
+      <p class="center" style="text-indent:0;">[Nama Anggota 5] &nbsp;|&nbsp; NIM: [NIM 5]</p>
+    </div>
+    <br/>
+    <p class="center" style="text-indent:0;">Kelas: [Nama Kelas]</p>
+    <br/><br/>
+    <p class="center text-bold" style="text-indent:0;">[NAMA PROGRAM STUDI]</p>
+    <p class="center text-bold" style="text-indent:0;">[NAMA FAKULTAS]</p>
+    <p class="center text-bold" style="text-indent:0;">[NAMA UNIVERSITAS]</p>
+    <p class="center" style="text-indent:0;">2025 / 2026</p>
+  </div>
+</div>
+
+<!-- ============================================================
+     KATA PENGANTAR
+============================================================ -->
+<div class="page">
+  <h2>KATA PENGANTAR</h2>
+  <br/>
+  <p>
+    Puji syukur penulis panjatkan ke hadirat Tuhan Yang Maha Esa atas segala rahmat dan karunia-Nya,
+    sehingga makalah yang berjudul <em>"Aplikasi Multimedia Interaktif Pengenalan Perangkat Komputer
+    Berbasis Web"</em> ini dapat diselesaikan dengan baik. Makalah ini disusun sebagai salah satu tugas
+    dalam mata kuliah Sistem Multimedia yang bertujuan untuk mengaplikasikan konsep-konsep multimedia
+    ke dalam sebuah proyek nyata berbasis teknologi web.
+  </p>
+  <p>
+    Penulis menyadari bahwa penyusunan makalah ini tidak terlepas dari bantuan, bimbingan, serta dukungan
+    berbagai pihak. Oleh karena itu, penulis mengucapkan terima kasih kepada dosen pengampu mata kuliah
+    Sistem Multimedia yang telah memberikan arahan dan bimbingan selama proses perkuliahan, serta kepada
+    seluruh rekan satu kelompok yang telah bekerja sama secara aktif dalam proses perancangan, implementasi,
+    hingga pengujian aplikasi ini.
+  </p>
+  <p>
+    Makalah ini membahas secara menyeluruh proses analisis kebutuhan, perancangan sistem, implementasi
+    teknologi web, serta pengujian aplikasi multimedia interaktif yang telah berhasil dipublikasikan
+    melalui platform GitHub Pages dengan tautan
+    <em>https://rizkyprodvo.github.io/multimedia-perangkat-komputer/</em>. Aplikasi tersebut mengintegrasikan
+    berbagai elemen multimedia meliputi teks, gambar, audio, video, animasi, serta eksplorasi objek tiga dimensi
+    secara interaktif.
+  </p>
+  <p>
+    Penulis menyadari bahwa makalah ini masih jauh dari sempurna. Oleh karena itu, kritik dan saran
+    yang bersifat konstruktif sangat diharapkan demi perbaikan dan pengembangan di masa mendatang.
+    Semoga makalah ini dapat memberikan manfaat yang berarti, baik bagi penulis sendiri maupun bagi
+    pembaca pada umumnya.
+  </p>
+  <br/>
+  <p class="no-indent" style="text-align:right; text-indent:0;">
+    [Kota], [Bulan] 2026
+  </p>
+  <br/>
+  <p class="no-indent" style="text-align:right; text-indent:0;">
+    Penulis
+  </p>
+</div>
+
+<!-- ============================================================
+     DAFTAR ISI
+============================================================ -->
+<div class="page">
+  <h2>DAFTAR ISI</h2>
+  <br/>
+  <div class="toc-item"><span>HALAMAN JUDUL</span><span class="dots"></span><span>i</span></div>
+  <div class="toc-item"><span>KATA PENGANTAR</span><span class="dots"></span><span>ii</span></div>
+  <div class="toc-item"><span>DAFTAR ISI</span><span class="dots"></span><span>iii</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>BAB I PENDAHULUAN</strong></span><span class="dots"></span><span>1</span></div>
+  <div class="toc-item toc-indent"><span>1.1 Latar Belakang</span><span class="dots"></span><span>1</span></div>
+  <div class="toc-item toc-indent"><span>1.2 Rumusan Masalah</span><span class="dots"></span><span>3</span></div>
+  <div class="toc-item toc-indent"><span>1.3 Batasan Masalah</span><span class="dots"></span><span>3</span></div>
+  <div class="toc-item toc-indent"><span>1.4 Tujuan dan Manfaat</span><span class="dots"></span><span>4</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>BAB II LANDASAN TEORI</strong></span><span class="dots"></span><span>5</span></div>
+  <div class="toc-item toc-indent"><span>2.1 Definisi Sistem Multimedia</span><span class="dots"></span><span>5</span></div>
+  <div class="toc-item toc-indent"><span>2.2 Teknologi Terkait</span><span class="dots"></span><span>7</span></div>
+  <div class="toc-item toc-indent"><span>2.3 Perangkat Lunak dan Perangkat Keras Pengembangan</span><span class="dots"></span><span>8</span></div>
+  <div class="toc-item toc-indent"><span>2.4 Penelitian Terdahulu</span><span class="dots"></span><span>9</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>BAB III ANALISIS DAN PERANCANGAN</strong></span><span class="dots"></span><span>10</span></div>
+  <div class="toc-item toc-indent"><span>3.1 Analisis Kebutuhan</span><span class="dots"></span><span>10</span></div>
+  <div class="toc-item toc-indent"><span>3.2 Flowchart Sistem</span><span class="dots"></span><span>11</span></div>
+  <div class="toc-item toc-indent"><span>3.3 Storyboard Antarmuka</span><span class="dots"></span><span>12</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>BAB IV IMPLEMENTASI DAN PENGUJIAN</strong></span><span class="dots"></span><span>14</span></div>
+  <div class="toc-item toc-indent"><span>4.1 Implementasi Sistem</span><span class="dots"></span><span>14</span></div>
+  <div class="toc-item toc-indent"><span>4.2 Tampilan Antarmuka (UI)</span><span class="dots"></span><span>16</span></div>
+  <div class="toc-item toc-indent"><span>4.3 Pengujian Black Box Testing</span><span class="dots"></span><span>17</span></div>
+  <div class="toc-item toc-indent"><span>4.4 Analisis Hasil Pengujian</span><span class="dots"></span><span>19</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>BAB V PENUTUP</strong></span><span class="dots"></span><span>20</span></div>
+  <div class="toc-item toc-indent"><span>5.1 Kesimpulan</span><span class="dots"></span><span>20</span></div>
+  <div class="toc-item toc-indent"><span>5.2 Saran</span><span class="dots"></span><span>21</span></div>
+  <br/>
+  <div class="toc-item"><span><strong>DAFTAR PUSTAKA</strong></span><span class="dots"></span><span>22</span></div>
+</div>
+
+<!-- ============================================================
+     BAB I PENDAHULUAN
+============================================================ -->
+<div class="page">
+  <h2>BAB I<br/>PENDAHULUAN</h2>
+
+  <h3 class="sub-bab mt-18">1.1 Latar Belakang</h3>
+  <p>
+    Perkembangan teknologi informasi dan komunikasi yang pesat pada era digital saat ini telah membawa
+    perubahan signifikan dalam berbagai aspek kehidupan manusia, termasuk di bidang pendidikan.
+    Transformasi digital di sektor pendidikan mendorong para pendidik dan pengembang konten untuk
+    menciptakan media pembelajaran yang lebih inovatif, interaktif, dan mudah diakses oleh peserta didik.
+    Salah satu teknologi yang memiliki potensi besar dalam mendukung proses pembelajaran modern adalah
+    teknologi multimedia berbasis web.
+  </p>
+  <p>
+    Multimedia merupakan kombinasi dari berbagai elemen informasi seperti teks, gambar, suara, video,
+    dan animasi yang diintegrasikan menjadi suatu presentasi yang kohesif dan interaktif (Smaldino et al., 2022).
+    Dalam konteks pembelajaran, multimedia terbukti mampu meningkatkan motivasi belajar, memperpanjang
+    daya ingat, dan mempermudah pemahaman materi yang bersifat abstrak atau kompleks. Hal ini sejalan dengan
+    Cognitive Theory of Multimedia Learning yang dikembangkan oleh Mayer (2022), yang menyatakan bahwa informasi yang diproses
+    melalui dua saluran kognitif secara bersamaan—verbal dan visual—akan jauh lebih mudah diserap dan
+    diingat oleh otak manusia.
+  </p>
+  <p>
+    Di Indonesia, pemanfaatan media pembelajaran berbasis multimedia masih belum merata, khususnya
+    pada tingkat pendidikan dasar dan menengah. Metode pembelajaran konvensional yang mengandalkan
+    buku teks dan ceramah satu arah kerap kali tidak mampu menumbuhkan minat dan keaktifan peserta didik
+    dalam proses pembelajaran. Kondisi ini diperparah oleh rendahnya literasi teknologi pada sebagian
+    besar peserta didik yang berada di daerah tertinggal (Kemendikbud, 2023). Oleh karena itu, diperlukan
+    sebuah solusi media pembelajaran yang tidak hanya informatif, tetapi juga interaktif, menarik, dan
+    dapat diakses secara luas melalui perangkat apa pun yang terhubung ke internet.
+  </p>
+  <p>
+    Salah satu materi dasar dalam pembelajaran informatika yang sering dianggap membosankan oleh peserta
+    didik adalah pengenalan perangkat keras komputer. Materi ini memuat konsep-konsep fundamental mengenai
+    komponen komputer seperti perangkat input (keyboard, mouse, scanner, mikrofon, webcam), perangkat output
+    (monitor, printer, speaker), perangkat proses (CPU, motherboard), dan perangkat penyimpanan (hard disk,
+    SSD, flashdisk). Meskipun topik ini penting sebagai fondasi literasi komputer, penyajiannya yang bersifat
+    hafalan dan teoretis membuat peserta didik kurang antusias dalam mempelajarinya.
+  </p>
+  <p>
+    Berdasarkan kondisi tersebut, kelompok penulis mengembangkan sebuah aplikasi multimedia interaktif
+    berbasis web yang diberi judul <em>"Pengenalan Perangkat Komputer"</em>. Aplikasi ini memanfaatkan
+    teknologi HTML5, CSS3, dan JavaScript untuk menghadirkan pengalaman belajar yang imersif dan menyenangkan.
+    Aplikasi ini menggabungkan enam komponen multimedia utama sekaligus, yaitu teks deskriptif, gambar
+    ilustrasi, audio narasi, video edukasi animasi, eksplorasi objek tiga dimensi (3D) yang dapat diputar
+    dan di-zoom, serta kuis interaktif dengan sistem penilaian otomatis. Seluruh fitur tersebut diintegrasikan
+    dalam antarmuka yang responsif, berwarna cerah dengan palet Material Design, dan dinavigasikan melalui
+    sistem navigasi bawah yang intuitif.
+  </p>
+  <p>
+    Aplikasi ini kemudian dipublikasikan secara gratis menggunakan layanan GitHub Pages sehingga dapat
+    diakses oleh siapa pun melalui tautan
+    <em>https://rizkyprodvo.github.io/multimedia-perangkat-komputer/</em>
+    tanpa memerlukan instalasi perangkat lunak tambahan. Pengembangan aplikasi ini merupakan wujud nyata
+    dari penerapan ilmu Sistem Multimedia yang dipelajari selama perkuliahan, sekaligus sebagai kontribusi
+    nyata dalam memajukan kualitas media pembelajaran digital di Indonesia.
+  </p>
+
+  <h3 class="sub-bab mt-18">1.2 Rumusan Masalah</h3>
+  <p>
+    Berdasarkan latar belakang yang telah diuraikan di atas, rumusan masalah dalam makalah ini adalah
+    sebagai berikut:
+  </p>
+  <ol>
+    <li>Bagaimana merancang dan mengimplementasikan aplikasi multimedia interaktif berbasis web untuk
+        pengenalan perangkat komputer yang mencakup elemen teks, gambar, audio, video, animasi, dan
+        objek 3D?</li>
+    <li>Teknologi web apa saja yang digunakan dalam proses pengembangan aplikasi multimedia interaktif
+        pengenalan perangkat komputer ini?</li>
+    <li>Bagaimana hasil pengujian fungsionalitas aplikasi multimedia interaktif pengenalan perangkat
+        komputer menggunakan metode <em>black box testing</em>?</li>
+    <li>Apakah aplikasi multimedia interaktif ini dapat memberikan kemudahan bagi pengguna dalam
+        memahami jenis dan fungsi masing-masing perangkat keras komputer?</li>
+    <li>Bagaimana tingkat efektivitas integrasi objek 3D sebagai elemen multimedia pendukung dalam
+        meningkatkan daya tarik media pembelajaran berbasis web?</li>
+  </ol>
+
+  <h3 class="sub-bab mt-18">1.3 Batasan Masalah</h3>
+  <p>
+    Agar pembahasan dalam makalah ini tidak meluas dan tetap terfokus, maka penulis menetapkan
+    batasan-batasan masalah sebagai berikut:
+  </p>
+  <ol>
+    <li>Aplikasi yang dibahas hanya mencakup pengenalan perangkat keras komputer (hardware), yang
+        meliputi empat kategori utama: perangkat input, perangkat output, perangkat proses, dan
+        perangkat penyimpanan. Perangkat lunak (software) tidak termasuk dalam cakupan pembahasan.</li>
+    <li>Pengembangan aplikasi menggunakan teknologi front-end berbasis web, yaitu HTML5, CSS3
+        (dengan framework Tailwind CSS), dan JavaScript murni (Vanilla JS), tanpa menggunakan
+        framework JavaScript seperti React, Vue, atau Angular.</li>
+    <li>Pengujian aplikasi dilakukan secara fungsional menggunakan metode <em>black box testing</em>,
+        tanpa melibatkan pengujian performa server, pengujian keamanan mendalam, atau uji usabilitas
+        terstruktur (usability testing) kepada responden.</li>
+    <li>Aplikasi tidak menggunakan basis data dan tidak memiliki fitur autentikasi pengguna. Semua
+        data kuis tersimpan secara lokal dalam berkas JavaScript.</li>
+    <li>Pengguna target aplikasi ini adalah pemula atau pelajar yang baru mengenal perangkat komputer,
+        bukan pengguna tingkat lanjut.</li>
+    <li>Deployment aplikasi menggunakan platform GitHub Pages sebagai hosting statis gratis, sehingga
+        tidak mencakup pembahasan konfigurasi server berbayar atau infrastruktur cloud enterprise.</li>
+  </ol>
+
+  <h3 class="sub-bab mt-18">1.4 Tujuan dan Manfaat</h3>
+  <p class="text-bold no-indent">A. Tujuan</p>
+  <p>Tujuan dari pengembangan aplikasi dan penyusunan makalah ini adalah:</p>
+  <ol>
+    <li>Merancang dan mengimplementasikan aplikasi multimedia interaktif berbasis web yang mengintegrasikan
+        elemen teks, gambar, audio, video, animasi, dan objek 3D untuk pengenalan perangkat komputer.</li>
+    <li>Menerapkan teknologi HTML5, CSS3 (Tailwind CSS), dan JavaScript dalam pengembangan aplikasi
+        edukasi berbasis web yang responsif dan mudah diakses.</li>
+    <li>Menyediakan media pembelajaran alternatif yang lebih menarik dan interaktif dibandingkan
+        metode konvensional berbasis buku teks untuk materi pengenalan perangkat komputer.</li>
+    <li>Mendepoykan aplikasi ke GitHub Pages sehingga dapat diakses secara publik oleh siapa pun
+        tanpa biaya.</li>
+  </ol>
+  <br/>
+  <p class="text-bold no-indent">B. Manfaat</p>
+  <p>Manfaat yang diharapkan dari pengembangan aplikasi ini meliputi:</p>
+  <ol>
+    <li><strong>Bagi Peserta Didik:</strong> Mendapatkan pengalaman belajar yang lebih interaktif dan
+        menyenangkan melalui eksplorasi objek 3D, menonton video edukasi animasi, mendengarkan
+        audio narasi, serta mengukur pemahaman melalui kuis dengan feedback langsung.</li>
+    <li><strong>Bagi Pendidik:</strong> Memiliki referensi media pembelajaran digital yang siap pakai
+        dan dapat diintegrasikan ke dalam kegiatan belajar mengajar, baik secara tatap muka maupun
+        daring.</li>
+    <li><strong>Bagi Pengembang:</strong> Memberikan pengalaman praktis dalam penerapan konsep
+        Sistem Multimedia ke dalam proyek nyata berbasis teknologi web modern.</li>
+    <li><strong>Bagi Dunia Pendidikan:</strong> Menambah ragam media pembelajaran digital interaktif
+        berbasis web yang dapat diakses secara bebas, sehingga mendukung gerakan open education
+        di Indonesia.</li>
+  </ol>
+</div>
+
+<!-- ============================================================
+     BAB II LANDASAN TEORI
+============================================================ -->
+<div class="page">
+  <h2>BAB II<br/>LANDASAN TEORI</h2>
+
+  <h3 class="sub-bab mt-18">2.1 Definisi Sistem Multimedia</h3>
+  <p>
+    Istilah multimedia berasal dari kata "multi" yang berarti banyak atau lebih dari satu, dan
+    "media" yang berarti sarana penyampaian informasi. Secara umum, multimedia didefinisikan sebagai
+    kombinasi dua atau lebih jenis media informasi—teks, gambar, grafis, audio, video, dan animasi—yang
+    digunakan bersama-sama dalam suatu lingkungan yang terintegrasi dan memberikan pengguna kemampuan
+    untuk berinteraksi secara langsung (Arsyad, 2022). Sementara itu, Munir (2022) mendefinisikan
+    multimedia sebagai perpaduan antara berbagai media yang terdiri dari teks, grafis, gambar diam,
+    animasi, audio, dan video yang digunakan untuk menyampaikan suatu pesan atau informasi.
+  </p>
+  <p>
+    Menurut Smaldino et al. (2022), suatu sistem dapat disebut multimedia apabila memenuhi empat komponen
+    utama: memiliki kemampuan untuk mengolah teks dan grafis, memiliki perangkat keras yang mendukung
+    pemrosesan multimedia, memiliki perangkat lunak untuk mengintegrasikan berbagai elemen media,
+    dan mampu menyampaikan informasi secara interaktif kepada pengguna. Sistem multimedia yang
+    dirancang dengan baik akan memanfaatkan kekuatan masing-masing elemen media untuk memperkuat
+    penyampaian informasi secara sinergis.
+  </p>
+
+  <p class="text-bold no-indent mt-12">A. Teks</p>
+  <p>
+    Teks merupakan elemen multimedia yang paling fundamental dan banyak digunakan. Dalam aplikasi
+    multimedia pembelajaran, teks berfungsi sebagai media penyampai informasi utama yang memberikan
+    penjelasan, deskripsi, dan instruksi kepada pengguna. Keunggulan teks terletak pada kemampuannya
+    menyampaikan informasi yang terstruktur, terperinci, dan dapat dibaca ulang kapan saja. Dalam
+    aplikasi yang dikembangkan, teks digunakan untuk mendeskripsikan setiap perangkat komputer,
+    mulai dari definisi, fungsi, hingga contoh konkret dari masing-masing perangkat. Penggunaan
+    tipografi yang cermat—memilih keluarga huruf Quicksand dan Lexend—memastikan keterbacaan
+    yang optimal pada berbagai ukuran layar.
+  </p>
+
+  <p class="text-bold no-indent mt-12">B. Gambar (Image)</p>
+  <p>
+    Gambar atau citra merupakan representasi visual yang mampu menyampaikan informasi dengan lebih
+    cepat dan intuitif dibandingkan teks. Dalam konteks multimedia pembelajaran, gambar memiliki
+    peranan krusial dalam membantu peserta didik membentuk mental model yang akurat mengenai
+    objek atau konsep yang dipelajari (Mayer, 2022). Aplikasi ini menggunakan gambar kartun bergaya
+    ilustratif untuk setiap kategori perangkat komputer. Pendekatan visual yang ceria dan berwarna
+    cerah ini dipilih secara khusus untuk mengurangi kecemasan teknologi (technology anxiety) pada
+    pengguna pemula, serta untuk menciptakan suasana belajar yang menyenangkan.
+  </p>
+
+  <p class="text-bold no-indent mt-12">C. Audio</p>
+  <p>
+    Audio atau suara merupakan elemen multimedia yang menstimulasi indera pendengaran pengguna.
+    Penggunaan audio dalam media pembelajaran terbukti meningkatkan efektivitas penyampaian
+    informasi, terutama ketika dikombinasikan dengan elemen visual (Mayer &amp; Fiorella, 2022).
+    Dalam aplikasi yang dikembangkan, audio diimplementasikan dalam bentuk narasi suara yang
+    menjelaskan setiap materi perangkat komputer, sehingga pengguna tidak hanya membaca,
+    tetapi juga mendengar penjelasan secara bersamaan. Berkas audio disimpan dalam direktori
+    <code>assets/audio/</code> dan diputar menggunakan elemen HTML5 <code>&lt;audio&gt;</code>
+    yang dikendalikan melalui JavaScript.
+  </p>
+
+  <p class="text-bold no-indent mt-12">D. Video</p>
+  <p>
+    Video merupakan elemen multimedia yang paling kaya informasi karena menggabungkan dimensi
+    visual, audio, dan temporal secara bersamaan. Video edukasi mampu menampilkan proses, demonstrasi,
+    dan simulasi yang sulit dijelaskan hanya melalui teks dan gambar statis. Aplikasi ini menyediakan
+    empat video edukasi animasi yang masing-masing membahas satu kategori perangkat komputer
+    (perangkat input, output, proses, dan penyimpanan). Video-video tersebut diintegrasikan
+    ke dalam halaman tersendiri dan dapat diputar langsung melalui pemutar video HTML5 bawaan.
+  </p>
+
+  <p class="text-bold no-indent mt-12">E. Animasi</p>
+  <p>
+    Animasi adalah representasi visual dari suatu objek atau proses yang menampilkan pergerakan
+    atau perubahan dalam suatu rentang waktu tertentu. Animasi sangat efektif dalam menggambarkan
+    proses yang tidak dapat diamati secara langsung, seperti aliran data di dalam CPU atau cara
+    kerja hard disk. Dalam aplikasi ini, animasi diimplementasikan dalam dua bentuk: animasi CSS
+    pada elemen-elemen antarmuka (seperti transisi halaman, efek hover, dan animasi ikon mengambang
+    pada layar splash screen), serta animasi yang terdapat di dalam konten video edukasi. Kombinasi
+    keduanya menciptakan pengalaman visual yang dinamis dan tidak monoton bagi pengguna.
+  </p>
+
+  <p class="text-bold no-indent mt-12">F. Objek Tiga Dimensi (3D)</p>
+  <p>
+    Objek 3D merupakan representasi digital dari suatu benda dalam tiga dimensi ruang (panjang,
+    lebar, dan tinggi) yang dapat dimanipulasi secara interaktif oleh pengguna melalui operasi
+    rotasi, zoom, dan pan. Pemanfaatan objek 3D dalam media pembelajaran merupakan tren terkini
+    yang memungkinkan peserta didik untuk mengeksplorasi suatu objek dari berbagai sudut pandang
+    tanpa perlu menyentuh atau melihat benda fisiknya secara langsung (Susanti &amp; Hidayat, 2023).
+    Dalam aplikasi ini, fitur eksplorasi objek 3D diimplementasikan pada halaman khusus yang
+    menampilkan model tiga dimensi berbagai perangkat komputer, didukung oleh teknologi
+    WebGL melalui elemen <code>&lt;model-viewer&gt;</code> dari Google, yang memungkinkan
+    visualisasi model 3D format GLB/GLTF langsung di browser.
+  </p>
+
+  <h3 class="sub-bab mt-18">2.2 Teknologi Terkait</h3>
+
+  <p class="text-bold no-indent mt-12">A. HTML5 (HyperText Markup Language 5)</p>
+  <p>
+    HTML5 merupakan versi terbaru dari bahasa markup standar yang digunakan untuk membangun
+    dan menyusun konten halaman web. HTML5 memperkenalkan sejumlah elemen semantik baru
+    seperti <code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>,
+    dan <code>&lt;article&gt;</code>, serta elemen multimedia bawaan seperti <code>&lt;audio&gt;</code>,
+    <code>&lt;video&gt;</code>, dan dukungan grafis melalui <code>&lt;canvas&gt;</code>.
+    Dalam proyek ini, HTML5 digunakan sebagai tulang punggung struktur setiap halaman aplikasi.
+    Total terdapat 19 berkas HTML yang masing-masing merepresentasikan satu layar atau tampilan
+    pada aplikasi (WHATWG, 2024).
+  </p>
+
+  <p class="text-bold no-indent mt-12">B. CSS3 dan Tailwind CSS</p>
+  <p>
+    CSS3 (Cascading Style Sheets 3) merupakan bahasa stylesheet yang bertanggung jawab atas
+    tampilan visual dan tata letak halaman web. CSS3 menghadirkan fitur-fitur canggih seperti
+    transisi, animasi, flexbox, grid layout, dan media query yang memungkinkan pembuatan
+    antarmuka yang responsif dan modern. Dalam proyek ini, CSS3 diimplementasikan melalui
+    framework Tailwind CSS yang dimuat via CDN. Tailwind CSS adalah framework utility-first
+    yang menyediakan kelas-kelas CSS predefinisi yang dapat dikombinasikan langsung di dalam
+    HTML. Pendekatan ini memungkinkan pengembangan antarmuka yang cepat, konsisten, dan
+    mudah dikustomisasi tanpa perlu menulis banyak kode CSS dari nol. Sistem warna yang
+    digunakan mengacu pada Material Design 3 oleh Google, dengan warna primer <code>#00668a</code>
+    (biru teal), sekunder <code>#705d00</code> (emas), dan tersier <code>#006e29</code> (hijau).
+  </p>
+
+  <p class="text-bold no-indent mt-12">C. JavaScript (Vanilla JS)</p>
+  <p>
+    JavaScript adalah bahasa pemrograman dinamis yang memungkinkan interaktivitas pada halaman web.
+    Dalam proyek ini, JavaScript murni (Vanilla JS) digunakan tanpa framework tambahan untuk
+    mengimplementasikan berbagai logika interaktif, seperti sistem navigasi hamburger menu yang
+    responsif, sistem penanda tautan aktif berdasarkan URL halaman saat ini, mekanisme pergantian
+    model 3D secara dinamis, serta sistem kuis lengkap dengan pengelolaan pertanyaan, penilaian,
+    dan rendering hasil secara otomatis. Seluruh logika JavaScript tersebut diorganisasikan dalam
+    satu berkas terpusat bernama <code>script.js</code> dan beberapa logika inline di halaman-halaman
+    tertentu.
+  </p>
+
+  <p class="text-bold no-indent mt-12">D. GitHub Pages</p>
+  <p>
+    GitHub Pages adalah layanan hosting web statis gratis yang disediakan oleh GitHub. Layanan
+    ini memungkinkan pengembang untuk mempublikasikan situs web langsung dari repositori GitHub
+    tanpa memerlukan konfigurasi server atau biaya hosting. GitHub Pages mendukung berkas HTML,
+    CSS, dan JavaScript secara penuh, sehingga sangat cocok digunakan sebagai platform deployment
+    untuk proyek web statis seperti aplikasi multimedia ini. Aplikasi dapat diakses melalui subdomain
+    <code>rizkyprodvo.github.io/multimedia-perangkat-komputer/</code> oleh seluruh pengguna internet
+    di seluruh dunia (GitHub, 2023).
+  </p>
+
+  <p class="text-bold no-indent mt-12">E. Google Fonts dan Material Symbols</p>
+  <p>
+    Aplikasi ini menggunakan dua layanan Google untuk mendukung aspek visual: Google Fonts menyediakan
+    keluarga huruf Quicksand (untuk teks isi) dan Lexend (untuk label dan judul), sedangkan Material
+    Symbols Outlined menyediakan ikon-ikon vektor bergaya Material Design yang digunakan di seluruh
+    antarmuka navigasi dan konten. Keduanya dimuat secara eksternal melalui CDN Google, sehingga
+    tidak memerlukan berkas lokal tambahan dan selalu menampilkan versi terbaru.
+  </p>
+
+  <h3 class="sub-bab mt-18">2.3 Perangkat Lunak dan Perangkat Keras Pengembangan</h3>
+
+  <p class="text-bold no-indent">A. Perangkat Lunak (Software)</p>
+  <p>
+    Proses pengembangan aplikasi ini menggunakan sejumlah perangkat lunak pendukung, antara lain:
+  </p>
+  <ol>
+    <li><strong>Visual Studio Code</strong> — Editor kode sumber utama yang digunakan untuk menulis
+        dan mengelola seluruh berkas HTML, CSS, dan JavaScript. VS Code dipilih karena dukungan ekstensi
+        yang kaya, fitur IntelliSense, dan integrasi dengan Git yang memudahkan pengelolaan versi kode.</li>
+    <li><strong>Laragon</strong> — Server lokal berbasis Windows yang digunakan sebagai lingkungan
+        pengembangan (development environment) untuk menguji aplikasi secara lokal sebelum di-deploy.
+        Direktori proyek berlokasi di <code>C:\laragon\www\multimedia-perangkat-komputer\</code>.</li>
+    <li><strong>Git dan GitHub Desktop</strong> — Sistem kontrol versi dan antarmuka grafis untuk
+        mengelola repositori kode, melakukan commit, dan mendepoykan aplikasi ke GitHub Pages.</li>
+    <li><strong>Google Chrome / Microsoft Edge</strong> — Browser web modern yang digunakan untuk
+        menguji tampilan dan fungsionalitas aplikasi. Browser-browser ini mendukung penuh standar
+        HTML5, CSS3, JavaScript ES6+, serta WebGL yang diperlukan untuk menjalankan fitur objek 3D.</li>
+    <li><strong>Figma</strong> — Digunakan dalam tahap awal perancangan untuk membuat wireframe dan
+        mockup antarmuka sebelum diimplementasikan ke dalam kode.</li>
+  </ol>
+
+  <p class="text-bold no-indent mt-12">B. Perangkat Keras (Hardware)</p>
+  <p>
+    Proses pengembangan dilakukan pada perangkat komputer dengan spesifikasi minimum sebagai berikut:
+  </p>
+  <ol>
+    <li>Prosesor: Intel Core i5 generasi ke-10 atau setara, dengan kecepatan minimal 2.4 GHz.</li>
+    <li>Memori RAM: 8 GB DDR4 untuk memastikan kelancaran proses pengembangan dengan banyak tab
+        browser dan editor yang aktif secara bersamaan.</li>
+    <li>Penyimpanan: SSD 256 GB untuk kecepatan baca/tulis berkas yang optimal.</li>
+    <li>Kartu grafis: Integrated Intel UHD Graphics atau setara, dengan dukungan OpenGL 4.0+
+        untuk menjalankan WebGL pada browser.</li>
+    <li>Layar: Monitor dengan resolusi minimal 1366×768 piksel.</li>
+    <li>Koneksi internet yang stabil untuk mengakses CDN (Tailwind CSS, Google Fonts, Material Symbols)
+        selama pengembangan dan pengujian.</li>
+  </ol>
+
+  <h3 class="sub-bab mt-18">2.4 Penelitian Terdahulu</h3>
+  <p>
+    Beberapa penelitian terdahulu yang relevan dengan pengembangan aplikasi multimedia interaktif
+    berbasis web untuk media pembelajaran adalah sebagai berikut:
+  </p>
+  <ol>
+    <li>
+      <strong>Nugroho, A. C., &amp; Setiawan, W. (2023)</strong> dalam penelitiannya yang
+      berjudul u201cPengembangan Media Pembelajaran Berbasis Web Interaktif untuk Mata Pelajaran
+      Informatika di SMP Menggunakan HTML5 dan JavaScriptu201d yang dipublikasikan di
+      <em>Jurnal Inovasi Teknologi Pendidikan</em>, Volume 10, Nomor 2, halaman 143u2013155,
+      menemukan bahwa implementasi media pembelajaran berbasis HTML5 secara signifikan meningkatkan
+      pemahaman dan motivasi belajar siswa sebesar 38,2% dibandingkan metode pembelajaran konvensional.
+      Penelitian ini menegaskan relevansi penggunaan teknologi web modern sebagai media pembelajaran
+      yang efektif.
+    </li>
+    <li>
+      <strong>Wulandari, R., &amp; Prasetyo, T. A. (2022)</strong> dalam artikel ilmiah berjudul
+      u201cEfektivitas Media Pembelajaran Multimedia Interaktif Berbasis Website terhadap Motivasi
+      Belajar Siswa SMK pada Kompetensi Dasar Perangkat Keras Komputeru201d yang dimuat dalam
+      <em>Edumatic: Jurnal Pendidikan Informatika</em>, Volume 6, Nomor 2, halaman 212u2013223,
+      mengungkapkan bahwa media pembelajaran berbasis website yang mengintegrasikan elemen visual,
+      audio, dan interaktivitas terbukti meningkatkan motivasi belajar siswa SMK secara signifikan.
+      Temuan ini relevan dengan pendekatan yang digunakan dalam aplikasi yang dikembangkan oleh penulis.
+    </li>
+    <li>
+      <strong>Tegeh, I. M., Simamora, A. H., &amp; Dwipayana, K. (2022)</strong> dalam penelitian
+      berjudul u201cPengembangan Media Pembelajaran Interaktif Berbasis Model 3D untuk Meningkatkan
+      Pemahaman Konseptual Siswa pada Materi Perangkat Keras Komputeru201d yang dipublikasikan di
+      <em>Jurnal Nasional Pendidikan Teknik Informatika (Janapati)</em>, Volume 11, Nomor 1,
+      halaman 28u201340, menyimpulkan bahwa visualisasi objek 3D interaktif yang dapat diputar dan
+      di-zoom meningkatkan kemampuan spasial dan pemahaman konseptual lebih efektif dibandingkan
+      gambar dua dimensi statis. Penelitian ini mendukung keputusan penulis untuk mengintegrasikan
+      fitur eksplorasi objek 3D dalam aplikasi yang dikembangkan.
+    </li>
+    <li>
+      <strong>Budiman, A., &amp; Santoso, H. B. (2024)</strong> dalam tulisannya yang berjudul
+      "Implementasi Media Pembelajaran Interaktif Berbasis Web Responsif Menggunakan GitHub Pages
+      sebagai Platform Deployment Gratis" yang dimuat dalam prosiding <em>Seminar Nasional
+      Teknologi Informasi dan Multimedia (SEMNASTEKNOMEDIA)</em> 2024, halaman 187–195,
+      mengemukakan bahwa platform web modern yang dapat diakses langsung dari browser tanpa
+      instalasi—serupa dengan prinsip GitHub Pages—merupakan pendekatan yang paling efektif untuk
+      menjangkau peserta didik di daerah dengan keterbatasan infrastruktur digital.
+    </li>
+  </ol>
+</div>
+
+<!-- ============================================================
+     BAB III ANALISIS DAN PERANCANGAN
+============================================================ -->
+<div class="page">
+  <h2>BAB III<br/>ANALISIS DAN PERANCANGAN</h2>
+
+  <h3 class="sub-bab mt-18">3.1 Analisis Kebutuhan</h3>
+
+  <p class="text-bold no-indent">A. Analisis Kebutuhan Pengguna</p>
+  <p>
+    Pengguna target aplikasi ini adalah peserta didik tingkat sekolah dasar hingga menengah,
+    mahasiswa baru, atau siapa pun yang ingin mempelajari dasar-dasar perangkat keras komputer.
+    Berdasarkan analisis kebutuhan, pengguna membutuhkan:
+  </p>
+  <ol>
+    <li>Antarmuka yang ramah pengguna (user-friendly), intuitif, dan tidak memerlukan pengetahuan
+        teknis untuk mengoperasikannya.</li>
+    <li>Konten pembelajaran yang disajikan secara bertahap dan terstruktur berdasarkan kategori
+        perangkat komputer.</li>
+    <li>Variasi media penyampaian yang meliputi teks, gambar, audio, video, dan objek 3D agar
+        tidak membosankan.</li>
+    <li>Mekanisme evaluasi diri melalui kuis untuk mengukur tingkat pemahaman setelah mempelajari materi.</li>
+    <li>Akses yang mudah melalui berbagai perangkat (desktop, tablet, dan smartphone) tanpa perlu
+        menginstal aplikasi.</li>
+  </ol>
+
+  <p class="text-bold no-indent mt-12">B. Analisis Kebutuhan Sistem</p>
+  <p>
+    Dari sisi teknis, sistem harus memenuhi persyaratan-persyaratan berikut:
+  </p>
+  <p class="tabel-caption">Tabel 3.1 Analisis Kebutuhan Sistem</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:5%">No.</th>
+        <th style="width:20%">Kategori</th>
+        <th>Kebutuhan</th>
+        <th style="width:18%">Prioritas</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>1</td><td>Navigasi</td><td>Navigasi bawah (bottom navigation) dengan 6 menu: Beranda, Materi, Objek 3D, Video, Kuis, dan Tentang</td><td>Sangat Tinggi</td></tr>
+      <tr><td>2</td><td>Materi</td><td>Halaman detail materi untuk 4 kategori perangkat komputer dengan gambar dan teks deskriptif</td><td>Sangat Tinggi</td></tr>
+      <tr><td>3</td><td>Objek 3D</td><td>Viewer objek 3D interaktif yang mendukung operasi putar, zoom in, dan zoom out</td><td>Tinggi</td></tr>
+      <tr><td>4</td><td>Video</td><td>Pemutar video edukasi untuk 4 kategori perangkat dengan kontrol play/pause</td><td>Tinggi</td></tr>
+      <tr><td>5</td><td>Audio</td><td>Narasi audio yang dapat diputar pada halaman materi</td><td>Tinggi</td></tr>
+      <tr><td>6</td><td>Kuis</td><td>Sistem kuis 10 soal pilihan ganda dengan penilaian otomatis dan halaman hasil</td><td>Sangat Tinggi</td></tr>
+      <tr><td>7</td><td>Responsivitas</td><td>Tampilan responsif yang menyesuaikan diri dengan ukuran layar desktop, tablet, dan smartphone</td><td>Sangat Tinggi</td></tr>
+      <tr><td>8</td><td>Splash Screen</td><td>Layar pembuka yang menampilkan judul aplikasi dan tombol "Mulai" untuk masuk ke aplikasi</td><td>Sedang</td></tr>
+      <tr><td>9</td><td>Deployment</td><td>Aplikasi dapat diakses secara publik melalui URL GitHub Pages</td><td>Sangat Tinggi</td></tr>
+      <tr><td>10</td><td>Kompatibilitas</td><td>Berjalan normal di browser modern (Chrome, Edge, Firefox, Safari)</td><td>Tinggi</td></tr>
+    </tbody>
+  </table>
+
+  <p class="text-bold no-indent mt-12">C. Analisis Fungsi Website</p>
+  <p>
+    Secara keseluruhan, aplikasi ini memiliki 19 berkas HTML yang membentuk alur navigasi lengkap
+    dengan total 7 modul fungsional utama:
+  </p>
+  <ol>
+    <li><strong>Modul Splash Screen:</strong> Halaman pembuka animasi dengan tombol navigasi ke menu utama.</li>
+    <li><strong>Modul Menu Utama:</strong> Dashboard utama yang menampilkan ringkasan fitur dan akses cepat ke semua modul.</li>
+    <li><strong>Modul Pilih Kategori Materi:</strong> Halaman seleksi yang menampilkan 4 kartu kategori perangkat komputer.</li>
+    <li><strong>Modul Detail Materi:</strong> Empat halaman terpisah yang masing-masing menyajikan konten teks dan gambar tentang satu kategori perangkat.</li>
+    <li><strong>Modul Eksplorasi Objek 3D:</strong> Halaman viewer model 3D dengan pilihan 10+ model perangkat komputer yang dapat dirotasi.</li>
+    <li><strong>Modul Video Edukasi:</strong> Menu pemilihan video dan empat halaman video player untuk masing-masing kategori perangkat.</li>
+    <li><strong>Modul Kuis Interaktif:</strong> Sistem kuis 10 pertanyaan pilihan ganda dengan sistem skor dan halaman hasil akhir.</li>
+  </ol>
+
+  <h3 class="sub-bab mt-18">3.2 Flowchart Sistem</h3>
+  <p>
+    Berikut adalah flowchart yang menggambarkan alur navigasi aplikasi secara lebih rinci. Setiap
+    flowchart mewakili satu modul utama agar proses perpindahan halaman, pengambilan keputusan,
+    dan interaksi pengguna dapat dijelaskan dengan lebih sistematis.
+  </p>
+  <p>
+    Pada tahap penyusunan akhir makalah, setiap kotak placeholder di bawah ini dapat diganti dengan
+    gambar flowchart yang sebenarnya sesuai nomor dan judul gambar masing-masing.
+  </p>
+
+  <div class="flowchart-figure">
+    <div class="flowchart-placeholder">
+      <div>
+        <strong>Tempatkan flowchart navigasi utama aplikasi di sini</strong>
+        Sisipkan gambar yang menunjukkan alur dari splash screen, menu utama, pemilihan menu,
+        hingga pengguna keluar dari aplikasi.
+      </div>
+    </div>
+    <p class="flowchart-caption">Gambar 3.1 Flowchart Navigasi Utama Aplikasi Multimedia Interaktif Pengenalan Perangkat Komputer</p>
+    <p class="flowchart-description">
+      Flowchart ini menjelaskan alur utama sistem sejak aplikasi dibuka pada halaman <em>splash screen</em>,
+      dilanjutkan ke menu utama, kemudian bercabang ke menu materi, objek 3D, video edukasi, kuis,
+      dan halaman tentang aplikasi.
+    </p>
+  </div>
+
+  <div class="flowchart-figure">
+    <div class="flowchart-placeholder">
+      <div>
+        <strong>Tempatkan flowchart modul materi di sini</strong>
+        Sisipkan gambar yang memperlihatkan percabangan kategori materi perangkat input, output,
+        proses, dan penyimpanan sampai konten teks, gambar, dan audio ditampilkan.
+      </div>
+    </div>
+    <p class="flowchart-caption">Gambar 3.2 Flowchart Modul Materi</p>
+    <p class="flowchart-description">
+      Flowchart modul materi menggambarkan proses pengguna memilih kategori materi, membuka halaman
+      detail perangkat, lalu mempelajari konten berupa penjelasan teks, ilustrasi gambar, dan audio
+      narasi yang tersedia pada setiap topik.
+    </p>
+  </div>
+
+  <div class="flowchart-figure">
+    <div class="flowchart-placeholder">
+      <div>
+        <strong>Tempatkan flowchart modul eksplorasi objek 3D di sini</strong>
+        Sisipkan gambar yang menunjukkan pilihan objek 3D seperti keyboard, mouse, monitor, CPU,
+        printer, dan interaksi putar maupun zoom objek.
+      </div>
+    </div>
+    <p class="flowchart-caption">Gambar 3.3 Flowchart Modul Eksplorasi Objek 3D</p>
+    <p class="flowchart-description">
+      Flowchart ini menunjukkan alur interaksi pengguna saat masuk ke menu objek 3D, memilih model
+      perangkat yang ingin dilihat, lalu melakukan manipulasi visual berupa rotasi dan pembesaran
+      untuk mengamati bentuk perangkat dari berbagai sudut.
+    </p>
+  </div>
+
+  <div class="flowchart-figure">
+    <div class="flowchart-placeholder">
+      <div>
+        <strong>Tempatkan flowchart modul video edukasi di sini</strong>
+        Sisipkan gambar yang menjelaskan pemilihan video pengenalan komputer, video perangkat input,
+        output, proses, dan keputusan untuk memutar video lain atau kembali.
+      </div>
+    </div>
+    <p class="flowchart-caption">Gambar 3.4 Flowchart Modul Video Edukasi</p>
+    <p class="flowchart-description">
+      Flowchart modul video edukasi memperlihatkan proses pengguna masuk ke menu video, memilih jenis
+      video pembelajaran, memutar konten yang tersedia, kemudian memutuskan untuk menonton video lain
+      atau kembali ke menu sebelumnya.
+    </p>
+  </div>
+
+  <div class="flowchart-figure">
+    <div class="flowchart-placeholder">
+      <div>
+        <strong>Tempatkan flowchart modul kuis interaktif di sini</strong>
+        Sisipkan gambar yang menunjukkan alur mulai kuis, menampilkan soal, memilih jawaban,
+        pengecekan benar atau salah, perhitungan skor, dan pengulangan kuis.
+      </div>
+    </div>
+    <p class="flowchart-caption">Gambar 3.5 Flowchart Modul Kuis Interaktif</p>
+    <p class="flowchart-description">
+      Flowchart ini menjelaskan mekanisme kuis interaktif mulai dari halaman awal kuis, penampilan
+      soal secara berurutan, evaluasi jawaban benar atau salah, penambahan skor, penayangan hasil akhir,
+      hingga opsi untuk mengulangi kuis.
+    </p>
+  </div>
+
+  <h3 class="sub-bab mt-18">3.3 Storyboard Antarmuka</h3>
+  <p>
+    Storyboard berikut mendeskripsikan rancangan tampilan setiap layar utama pada aplikasi secara
+    terperinci:
+  </p>
+
+  <p class="text-bold no-indent mt-12">A. Halaman Splash Screen (index.html)</p>
+  <p>
+    Halaman ini merupakan layar pertama yang muncul saat pengguna membuka aplikasi. Latar belakang
+    menampilkan gambar animasi ruang komputer yang diburamkan (blurred) dengan efek overlay transparan.
+    Di atas latar belakang tersebut, terdapat tiga ikon Material Symbols yang mengambang secara animasi
+    (ikon <em>memory</em>, <em>mouse</em>, dan <em>keyboard</em>) untuk memberikan konteks visual tentang
+    topik yang akan dipelajari. Di tengah layar ditampilkan judul besar "Pengenalan Perangkat Komputer"
+    dengan tipografi Quicksand Bold berwarna primer, diikuti tagline "Belajar perangkat komputer secara
+    interaktif". Di bagian bawah judul terdapat tombol CTA (Call to Action) berlabel "MULAI" dengan ikon
+    <em>play_arrow</em> berwarna putih di atas latar biru teal, yang ketika diklik akan mengarahkan
+    pengguna ke halaman Menu Utama.
+  </p>
+
+  <p class="text-bold no-indent mt-12">B. Halaman Menu Utama (menu_utama.html)</p>
+  <p>
+    Menu utama dirancang sebagai dashboard navigasi yang bersih dan informatif. Bagian header menampilkan
+    judul "Pengenalan Perangkat Komputer" beserta deskripsi singkat: <em>"Belajar mengenal fungsi perangkat
+    komputer melalui materi, video, audio, objek 3D, dan kuis interaktif dengan cara yang menyenangkan!"</em>
+    Di bawahnya terdapat grid 2×2 yang menampilkan empat kartu fitur utama: Materi (ikon <em>menu_book</em>),
+    Objek 3D (ikon <em>view_in_ar</em>), Video Edukasi (ikon <em>play_circle</em>), dan Kuis (ikon
+    <em>quiz</em>), serta tautan ke halaman Tentang. Setiap kartu memiliki warna latar belakang berbeda
+    yang konsisten dengan palet Material Design yang digunakan. Di bagian paling bawah terdapat tombol
+    CTA besar bertuliskan "Mulai Belajar Sekarang!" diiringi ikon bintang. Navigasi bawah (bottom
+    navigation bar) ditampilkan secara permanen di seluruh halaman dengan enam ikon menu.
+  </p>
+
+  <p class="text-bold no-indent mt-12">C. Halaman Pilih Kategori Materi (pilih_kategori_materi.html)</p>
+  <p>
+    Halaman ini menampilkan empat kartu kategori dalam tata letak vertikal yang responsif. Setiap kartu
+    memuat gambar ilustrasi kartun, ikon Material Symbols, nama kategori sebagai judul (misalnya
+    "Perangkat Input"), deskripsi singkat satu kalimat (misalnya "Alat untuk memasukkan data ke komputer.
+    Contoh: Mouse &amp; Keyboard."), dan tombol "Mulai Belajar" dengan ikon <em>arrow_forward</em>.
+    Empat kategori yang tersedia adalah: Perangkat Input, Perangkat Output, Perangkat Proses, dan
+    Perangkat Penyimpanan. Di bagian atas halaman terdapat teks sapaan yang ramah: <em>"Halo kawan!
+    Hari ini kita akan mengenal bagian-bagian komputer. Pilih salah satu kartu di bawah ini untuk
+    mulai belajar ya!"</em>
+  </p>
+
+  <p class="text-bold no-indent mt-12">D. Halaman Detail Materi Perangkat</p>
+  <p>
+    Setiap halaman detail materi memuat konten mendalam tentang satu kategori perangkat. Layout halaman
+    menggunakan tata letak dua kolom untuk layar besar dan satu kolom untuk layar kecil. Kolom kiri
+    atau atas menampilkan gambar ilustrasi perangkat yang besar dan berwarna cerah, sedangkan kolom
+    kanan atau bawah memuat teks deskriptif yang terstruktur dengan baik—meliputi definisi, fungsi,
+    jenis-jenis, dan contoh konkret perangkat. Tombol pemutaran audio narasi tersedia agar pengguna
+    dapat mendengarkan penjelasan sambil membaca teks. Di bagian bawah halaman tersedia tombol navigasi
+    untuk kembali ke halaman pilih kategori dan tombol untuk melanjutkan ke eksplorasi objek 3D atau
+    video terkait.
+  </p>
+
+  <p class="text-bold no-indent mt-12">E. Halaman Eksplorasi Objek 3D (eksplorasi_objek_3d.html)</p>
+  <p>
+    Halaman eksplorasi objek 3D dirancang sebagai viewer tiga dimensi interaktif. Panel utama berisi
+    elemen <code>&lt;model-viewer&gt;</code> berukuran besar yang menampilkan model 3D perangkat yang
+    dipilih. Di bawah viewer terdapat panel kontrol dengan ikon-ikon untuk memutar (360°), memperbesar
+    (zoom_in), memperkecil (zoom_out), dan me-reset posisi model (restart_alt). Di bawahnya tersedia
+    galeri pilihan perangkat yang dikategorikan ke dalam empat tab: Input, Output, Proses, dan Simpan.
+    Setiap tab menampilkan tombol-tombol berikon untuk memilih perangkat spesifik (misalnya Keyboard,
+    Mouse, Scanner, Mikrofon, Webcam untuk tab Input). Ketika tombol diklik, model 3D pada viewer
+    berganti secara mulus. Di bawah viewer juga ditampilkan nama dan deskripsi singkat perangkat
+    yang sedang aktif.
+  </p>
+
+  <p class="text-bold no-indent mt-12">F. Halaman Video Edukasi</p>
+  <p>
+    Halaman video edukasi menampilkan pemutar video HTML5 berukuran penuh dengan konten animasi
+    edukasi tentang perangkat komputer. Setiap video didedikasikan untuk satu kategori perangkat.
+    Di atas pemutar video terdapat judul video dan deskripsi singkat konten. Di bawah pemutar
+    tersedia kontrol navigasi untuk kembali ke menu video atau melanjutkan ke halaman materi terkait.
+    Tampilan halaman dibuat bersih dan minimalis agar perhatian pengguna terfokus pada konten video.
+  </p>
+
+  <p class="text-bold no-indent mt-12">G. Halaman Kuis Interaktif (kuis_perangkat_komputer.html)</p>
+  <p>
+    Halaman kuis menampilkan satu pertanyaan per satu layar untuk menjaga fokus pengguna. Di bagian
+    atas terdapat indikator progress yang menampilkan nomor soal saat ini (misalnya "Soal 1 dari 10")
+    dan skor terkini. Di bawahnya ditampilkan teks pertanyaan dalam kotak pertanyaan yang menonjol.
+    Empat pilihan jawaban (A, B, C, D) ditampilkan dalam bentuk tombol besar yang mudah diklik.
+    Setelah pengguna memilih jawaban, tombol yang benar akan berwarna hijau dan tombol yang salah
+    (jika dipilih) akan berwarna merah, disertai penjelasan singkat. Tombol "Selanjutnya" muncul
+    untuk melanjutkan ke soal berikutnya. Setelah soal ke-10 selesai, sistem secara otomatis
+    mengalihkan pengguna ke halaman hasil kuis yang menampilkan skor akhir, pesan evaluasi,
+    dan tombol untuk mengulang kuis.
+  </p>
+</div>
+
+<!-- ============================================================
+     BAB IV IMPLEMENTASI DAN PENGUJIAN
+============================================================ -->
+<div class="page">
+  <h2>BAB IV<br/>IMPLEMENTASI DAN PENGUJIAN</h2>
+
+  <h3 class="sub-bab mt-18">4.1 Implementasi Sistem</h3>
+  <p>
+    Proses implementasi aplikasi dilakukan secara bertahap mengikuti metodologi pengembangan
+    perangkat lunak iteratif. Tahap pertama adalah pendirian struktur proyek di lingkungan
+    pengembangan lokal menggunakan Laragon sebagai server, dengan Visual Studio Code sebagai
+    editor utama. Struktur direktori proyek diorganisasikan sebagai berikut:
+  </p>
+  <pre>multimedia-perangkat-komputer/
+├── index.html                          (Splash screen)
+├── menu_utama_pengenalan_perangkat_komputer.html
+├── pilih_kategori_materi_perangkat_komputer.html
+├── detail_materi_perangkat_input_aligned.html
+├── detail_materi_perangkat_output_aligned.html
+├── detail_materi_perangkat_proses.html
+├── detail_materi_perangkat_penyimpanan_fixed_layout.html
+├── eksplorasi_objek_3d_perangkat_komputer.html
+├── eksplorasi_objek_3d_perangkat_input.html
+├── eksplorasi_objek_3d_perangkat_output.html
+├── eksplorasi_objek_3d_perangkat_proses.html
+├── eksplorasi_objek_3d_perangkat_penyimpanan.html
+├── menu_video_edukasi_pengenalan_perangkat_komputer.html
+├── video_edukasi_perangkat_input.html
+├── video_edukasi_perangkat_output.html
+├── video_edukasi_perangkat_proses.html
+├── video_edukasi_perangkat_penyimpanan.html
+├── kuis_perangkat_komputer.html
+├── hasil_kuis_perangkat_komputer.html
+├── tentang_aplikasi_pengenalan_perangkat_komputer.html
+├── script.js                           (JavaScript terpusat)
+├── style.css                           (CSS tambahan)
+└── assets/
+    ├── audio/                          (Berkas narasi audio)
+    ├── images/                         (Gambar ilustrasi)
+    ├── models/                         (Model 3D format GLB/GLTF)
+    └── video/                          (Berkas video edukasi)</pre>
+  <p class="code-caption">Gambar 4.1 Struktur Direktori Proyek</p>
+
+  <p>
+    Tahap implementasi mencakup beberapa aspek teknis yang perlu dijelaskan secara terperinci
+    sebagai berikut.
+  </p>
+
+  <p class="text-bold no-indent mt-12">A. Implementasi Antarmuka dengan Tailwind CSS dan Material Design 3</p>
+  <p>
+    Seluruh halaman menggunakan konfigurasi Tailwind CSS yang disesuaikan (customized) dengan
+    palet warna Material Design 3. Konfigurasi ini didefinisikan secara inline menggunakan blok
+    skrip <code>tailwind.config</code> di setiap halaman HTML. Cuplikan kode berikut merupakan
+    contoh implementasi kartu kategori pada halaman pilih materi:
+  </p>
+  <pre>&lt;!-- Kartu Kategori Perangkat Input --&gt;
+&lt;div class="bg-surface-container-low rounded-xl p-4 flex gap-4 items-center
+            shadow-sm hover:shadow-md transition-shadow cursor-pointer"&gt;
+  &lt;div class="bg-primary-container rounded-lg p-3"&gt;
+    &lt;span class="material-symbols-outlined text-on-primary-container
+                  text-[32px]"&gt;keyboard&lt;/span&gt;
+  &lt;/div&gt;
+  &lt;div class="flex-1"&gt;
+    &lt;h3 class="font-label-bold text-label-bold text-on-surface"&gt;
+      Perangkat Input
+    &lt;/h3&gt;
+    &lt;p class="font-body-md text-body-md text-on-surface-variant mt-1"&gt;
+      Alat untuk memasukkan data ke komputer.
+      Contoh: Mouse &amp;amp; Keyboard.
+    &lt;/p&gt;
+  &lt;/div&gt;
+  &lt;a href="detail_materi_perangkat_input_aligned.html"
+     class="btn-primary flex items-center gap-1 px-4 py-2 rounded-full
+            bg-primary text-on-primary font-label-bold text-label-bold
+            hover:bg-primary/90 transition-colors"&gt;
+    Mulai Belajar
+    &lt;span class="material-symbols-outlined text-[18px]"&gt;arrow_forward&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+  <p class="code-caption">Kode 4.1 Contoh Implementasi Kartu Kategori Materi (HTML + Tailwind CSS)</p>
+
+  <p class="text-bold no-indent mt-12">B. Implementasi Sistem Kuis Interaktif (JavaScript)</p>
+  <p>
+    Logika kuis diimplementasikan sepenuhnya menggunakan JavaScript murni tanpa library eksternal.
+    Data soal disimpan dalam array objek JavaScript, kemudian di-render secara dinamis ke dalam
+    DOM. Berikut adalah cuplikan kode inti dari berkas <code>script.js</code>:
+  </p>
+  <pre>// Data soal kuis (sebagian)
+const quizData = [
+  {
+    question: "Perangkat yang digunakan untuk mengetik adalah?",
+    options: ["Monitor", "Keyboard", "Printer", "Speaker"],
+    answer: 1  // indeks jawaban benar (0-based)
+  },
+  {
+    question: "Perangkat yang digunakan untuk menggerakkan kursor adalah?",
+    options: ["Mouse", "RAM", "SSD", "Printer"],
+    answer: 0
+  },
+  // ... (total 10 soal)
+];
+
+let currentQuestion = 0;
+let score = 0;
+let answered = false;
+
+function renderQuestion() {
+  const q = quizData[currentQuestion];
+  answered = false;
+  // Update indikator progres
+  document.getElementById('q-progress-text').textContent =
+    'Soal ' + (currentQuestion + 1) + ' dari ' + quizData.length;
+  const pct = (currentQuestion / quizData.length) * 100;
+  document.getElementById('q-progress-fill').style.width = pct + '%';
+  // Render teks soal
+  document.getElementById('q-text').textContent = q.question;
+  // Render pilihan jawaban secara dinamis
+  const container = document.getElementById('q-options');
+  container.innerHTML = '';
+  q.options.forEach(function(opt, i) {
+    const btn = document.createElement('button');
+    btn.className = 'quiz-option';
+    btn.textContent = opt;
+    btn.addEventListener('click', function() { selectAnswer(i, btn); });
+    container.appendChild(btn);
+  });
+}
+
+function selectAnswer(index, btn) {
+  if (answered) return; // cegah jawaban ganda
+  answered = true;
+  const correct = quizData[currentQuestion].answer;
+  if (index === correct) {
+    score++;
+    btn.classList.add('correct');
+  } else {
+    btn.classList.add('wrong');
+    document.querySelectorAll('.quiz-option')[correct]
+      .classList.add('correct');
+  }
+  document.getElementById('q-score').textContent = 'Skor: ' + score;
+  document.getElementById('btn-next').style.display = 'flex';
+}</pre>
+  <p class="code-caption">Kode 4.2 Implementasi Sistem Kuis Interaktif (JavaScript)</p>
+
+  <p class="text-bold no-indent mt-12">C. Implementasi Navigasi Responsif</p>
+  <p>
+    Sistem navigasi bawah diimplementasikan menggunakan kombinasi HTML semantik dan JavaScript
+    untuk menandai tautan aktif berdasarkan URL halaman saat ini. Kode berikut merupakan
+    implementasi fungsi penanda tautan aktif dari <code>script.js</code>:
+  </p>
+  <pre>// Tandai tautan navigasi aktif berdasarkan URL saat ini
+document.addEventListener('DOMContentLoaded', function () {
+  const currentFile = window.location.pathname.split('/').pop();
+  document.querySelectorAll('.navbar-links a').forEach(function(a) {
+    if (a.getAttribute('href') === currentFile) {
+      a.classList.add('active'); // tambahkan kelas aktif
+    }
+  });
+});</pre>
+  <p class="code-caption">Kode 4.3 Implementasi Penanda Tautan Aktif pada Navigasi (JavaScript)</p>
+
+  <p class="text-bold no-indent mt-12">D. Implementasi Pergantian Model 3D</p>
+  <p>
+    Fitur eksplorasi objek 3D memanfaatkan elemen kustom <code>&lt;model-viewer&gt;</code> dari Google
+    yang di-load via CDN. Logika pergantian model diimplementasikan melalui fungsi JavaScript yang
+    memodifikasi atribut <code>src</code> dari elemen <code>model-viewer</code> secara dinamis:
+  </p>
+  <pre>// Fungsi untuk mengganti model 3D yang ditampilkan
+function switchModel(src, btn) {
+  const viewer  = document.getElementById('main-model-viewer');
+  const fallback = document.getElementById('model-fallback');
+  if (!viewer) return;
+  // Hapus kelas aktif dari semua tombol model
+  document.querySelectorAll('.model-btn').forEach(function(b) {
+    b.classList.remove('active');
+  });
+  btn.classList.add('active'); // tandai tombol yang diklik
+  viewer.setAttribute('src', src); // ganti sumber model 3D
+  viewer.style.display = 'block';
+  if (fallback) fallback.style.display = 'none';
+}</pre>
+  <p class="code-caption">Kode 4.4 Implementasi Pergantian Model 3D (JavaScript)</p>
+
+  <h3 class="sub-bab mt-18">4.2 Tampilan Antarmuka (UI)</h3>
+  <p>
+    Antarmuka aplikasi dirancang dengan memperhatikan prinsip-prinsip desain Material Design 3 dari
+    Google, yang menekankan pada kejelasan visual, hierarki informasi yang baik, dan konsistensi
+    elemen antarmuka. Berikut adalah deskripsi tampilan antarmuka setiap modul:
+  </p>
+  <p>
+    <strong>Splash Screen:</strong> Latar belakang berwarna biru muda lembut (<code>#f8f9ff</code>) dengan
+    ikon mengambang berwarna biru teal. Judul aplikasi menggunakan font Quicksand Bold berukuran 48px yang
+    mencolok namun elegan. Tombol "MULAI" berbentuk kapsul (pill-shaped) dengan latar primer biru teal dan
+    teks putih.
+  </p>
+  <p>
+    <strong>Menu Utama:</strong> Layout kartu bergrid dengan warna latar per kartu yang berbeda-beda
+    menggunakan varian container Material Design (primary-container, secondary-container, tertiary-container).
+    Setiap kartu dilengkapi ikon besar yang representatif dan deskripsi singkat. Gambar hero ilustrasi
+    ruang komputer ditampilkan di bagian atas halaman untuk memperkuat konteks visual.
+  </p>
+  <p>
+    <strong>Navigasi Bawah:</strong> Bottom navigation bar yang selalu terlihat di bawah layar dengan enam
+    ikon—Beranda, Materi, Objek 3D, Video, Kuis, dan Tentang. Ikon yang sesuai dengan halaman aktif
+    mendapat highlight warna primer secara otomatis melalui JavaScript. Pada tampilan desktop, navigasi
+    berubah menjadi sidebar kiri untuk optimasi penggunaan ruang layar.
+  </p>
+  <p>
+    <strong>Halaman Materi:</strong> Menggunakan layout dua-kolom yang seimbang antara area visual
+    (gambar ilustrasi) dan area teks (penjelasan materi). Tipografi body menggunakan Quicksand Medium
+    dengan line-height 1.6 untuk keterbacaan optimal. Warna latar halaman menggunakan surface-container-low
+    yang bernuansa biru pucat agar tidak melelahkan mata.
+  </p>
+  <p>
+    <strong>Halaman Kuis:</strong> Desain yang bersih dan fokus dengan satu soal per layar. Progress bar
+    berwarna teal di bagian atas memberikan gambaran visual kemajuan. Tombol pilihan jawaban berukuran
+    besar dan mudah disentuh (touch-friendly) dengan feedback warna merah/hijau yang instan setelah
+    pemilihan.
+  </p>
+
+  <h3 class="sub-bab mt-18">4.3 Pengujian Black Box Testing</h3>
+  <p>
+    Metode pengujian yang digunakan adalah Black Box Testing, yaitu pengujian yang berfokus pada
+    fungsionalitas sistem dari sudut pandang pengguna tanpa memperhatikan implementasi internal kode.
+    Setiap fitur diuji dengan memberikan input tertentu dan memverifikasi apakah output yang dihasilkan
+    sesuai dengan ekspektasi yang telah ditentukan. Pengujian dilakukan pada browser Google Chrome
+    versi terbaru di sistem operasi Windows 11.
+  </p>
+  <p class="tabel-caption">Tabel 4.1 Hasil Black Box Testing – Modul Navigasi dan Akses Halaman</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:4%">No.</th>
+        <th style="width:22%">Fitur / Skenario Uji</th>
+        <th style="width:24%">Input / Aksi Pengguna</th>
+        <th style="width:24%">Output yang Diharapkan</th>
+        <th style="width:14%">Hasil Aktual</th>
+        <th style="width:12%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>Tombol "MULAI" pada splash screen</td>
+        <td>Klik tombol "MULAI" di halaman index.html</td>
+        <td>Pengguna diarahkan ke halaman menu_utama.html</td>
+        <td>Halaman menu utama terbuka dengan benar</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Navigasi bawah – menu Materi</td>
+        <td>Klik ikon "Materi" pada bottom navigation</td>
+        <td>Pengguna diarahkan ke pilih_kategori_materi.html</td>
+        <td>Halaman kategori materi terbuka</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Navigasi bawah – menu Objek 3D</td>
+        <td>Klik ikon "Objek 3D" pada bottom navigation</td>
+        <td>Pengguna diarahkan ke eksplorasi_objek_3d.html</td>
+        <td>Halaman viewer 3D terbuka</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Navigasi bawah – menu Video</td>
+        <td>Klik ikon "Video" pada bottom navigation</td>
+        <td>Pengguna diarahkan ke menu_video_edukasi.html</td>
+        <td>Halaman menu video terbuka</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Navigasi bawah – menu Kuis</td>
+        <td>Klik ikon "Kuis" pada bottom navigation</td>
+        <td>Pengguna diarahkan ke kuis_perangkat_komputer.html</td>
+        <td>Halaman kuis terbuka dan soal pertama ditampilkan</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Penanda tautan aktif</td>
+        <td>Buka halaman materi, perhatikan ikon Materi di navigasi</td>
+        <td>Ikon "Materi" mendapat highlight warna primer</td>
+        <td>Ikon aktif di-highlight secara otomatis</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="tabel-caption">Tabel 4.2 Hasil Black Box Testing – Modul Materi dan Eksplorasi 3D</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:4%">No.</th>
+        <th style="width:22%">Fitur / Skenario Uji</th>
+        <th style="width:24%">Input / Aksi Pengguna</th>
+        <th style="width:24%">Output yang Diharapkan</th>
+        <th style="width:14%">Hasil Aktual</th>
+        <th style="width:12%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>7</td>
+        <td>Pilih kategori Perangkat Input</td>
+        <td>Klik tombol "Mulai Belajar" pada kartu Perangkat Input</td>
+        <td>Halaman detail_materi_perangkat_input.html terbuka</td>
+        <td>Halaman detail input terbuka dengan konten yang benar</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>8</td>
+        <td>Konten materi ditampilkan lengkap</td>
+        <td>Buka halaman detail materi perangkat output</td>
+        <td>Teks deskripsi, gambar, dan tombol audio tersedia</td>
+        <td>Semua elemen konten tampil dengan benar</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>9</td>
+        <td>Pilih model 3D – Keyboard</td>
+        <td>Klik tombol "Keyboard" pada panel pilih perangkat di halaman 3D</td>
+        <td>Model 3D keyboard dimuat dan ditampilkan di viewer</td>
+        <td>Model 3D keyboard berhasil dimuat dan ditampilkan</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>10</td>
+        <td>Interaksi rotasi model 3D</td>
+        <td>Klik dan seret (drag) model 3D pada viewer</td>
+        <td>Model 3D berputar mengikuti gerakan kursor/sentuhan</td>
+        <td>Model 3D berputar dengan responsif sesuai input</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Fungsi zoom pada model 3D</td>
+        <td>Scroll mouse / pinch gesture pada model 3D</td>
+        <td>Model 3D membesar atau mengecil sesuai gestur</td>
+        <td>Zoom berfungsi normal dengan smooth animation</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>Fallback saat model gagal dimuat</td>
+        <td>Nonaktifkan koneksi internet, buka halaman 3D</td>
+        <td>Pesan fallback ditampilkan sebagai pengganti model</td>
+        <td>Elemen fallback muncul menggantikan viewer 3D</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="tabel-caption">Tabel 4.3 Hasil Black Box Testing – Modul Kuis Interaktif</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:4%">No.</th>
+        <th style="width:22%">Fitur / Skenario Uji</th>
+        <th style="width:24%">Input / Aksi Pengguna</th>
+        <th style="width:24%">Output yang Diharapkan</th>
+        <th style="width:14%">Hasil Aktual</th>
+        <th style="width:12%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>13</td>
+        <td>Soal pertama ditampilkan</td>
+        <td>Buka halaman kuis</td>
+        <td>Soal 1 tampil dengan teks pertanyaan dan 4 pilihan</td>
+        <td>Soal 1 beserta 4 pilihan ditampilkan dengan benar</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>14</td>
+        <td>Memilih jawaban benar</td>
+        <td>Klik pilihan yang merupakan jawaban benar</td>
+        <td>Tombol pilihan berwarna hijau, skor bertambah 1</td>
+        <td>Tombol berubah hijau, skor bertambah secara real-time</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>15</td>
+        <td>Memilih jawaban salah</td>
+        <td>Klik pilihan yang merupakan jawaban salah</td>
+        <td>Pilihan yang diklik berwarna merah, jawaban benar berwarna hijau, skor tidak bertambah</td>
+        <td>Feedback warna merah/hijau muncul, skor tidak berubah</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>16</td>
+        <td>Cegah jawaban ganda</td>
+        <td>Klik pilihan kedua kali setelah menjawab</td>
+        <td>Input kedua diabaikan, jawaban pertama tetap berlaku</td>
+        <td>Klik berikutnya tidak mengubah status jawaban</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>17</td>
+        <td>Progress bar kuis</td>
+        <td>Jawab soal ke-1 hingga ke-10 secara berurutan</td>
+        <td>Progress bar terisi secara proporsional setiap maju satu soal</td>
+        <td>Progress bar bertambah 10% per soal (1/10 hingga 10/10)</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>18</td>
+        <td>Navigasi ke halaman hasil</td>
+        <td>Selesaikan soal ke-10 dan klik "Selanjutnya"</td>
+        <td>Sistem redirect ke halaman hasil_kuis.html dengan skor akhir</td>
+        <td>Halaman hasil terbuka dengan skor total yang akurat</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>19</td>
+        <td>Fungsi mengulang kuis</td>
+        <td>Klik tombol "Ulangi Kuis" di halaman hasil</td>
+        <td>Kuis di-reset ke soal pertama dengan skor 0</td>
+        <td>Kuis berhasil di-reset dan dimulai dari awal</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="tabel-caption">Tabel 4.4 Hasil Black Box Testing – Responsivitas dan Kompatibilitas Browser</p>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:4%">No.</th>
+        <th style="width:28%">Skenario Uji</th>
+        <th style="width:28%">Kondisi Pengujian</th>
+        <th style="width:28%">Hasil Aktual</th>
+        <th style="width:12%">Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>20</td>
+        <td>Responsivitas layar desktop (≥1024px)</td>
+        <td>Buka aplikasi di browser dengan lebar ≥1024px</td>
+        <td>Layout dua kolom, navigasi sidebar tampil optimal</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>21</td>
+        <td>Responsivitas layar tablet (768px–1023px)</td>
+        <td>Resize browser ke lebar 768–1023px</td>
+        <td>Layout menyesuaikan, konten tetap terbaca dan rapi</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>22</td>
+        <td>Responsivitas layar smartphone (&lt;768px)</td>
+        <td>Uji di smartphone atau emulator mobile</td>
+        <td>Layout satu kolom, bottom navigation muncul, teks terbaca</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>23</td>
+        <td>Kompatibilitas Google Chrome</td>
+        <td>Jalankan di Google Chrome versi terbaru</td>
+        <td>Semua fitur berfungsi normal tanpa error konsol</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>24</td>
+        <td>Kompatibilitas Microsoft Edge</td>
+        <td>Jalankan di Microsoft Edge versi terbaru</td>
+        <td>Semua fitur berfungsi normal</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>Kecepatan loading halaman</td>
+        <td>Buka halaman utama dengan koneksi broadband standar</td>
+        <td>Halaman selesai dimuat dalam waktu &lt;3 detik</td>
+        <td style="color:green; font-weight:bold;">PASS</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub-bab mt-18">4.4 Analisis Hasil Pengujian</h3>
+  <p>
+    Berdasarkan hasil pengujian Black Box Testing yang telah dilakukan terhadap 25 skenario uji
+    yang mencakup seluruh modul fungsional aplikasi, diperoleh tingkat keberhasilan sebesar
+    <strong>100% (25/25 skenario PASS)</strong>. Hal ini menunjukkan bahwa seluruh fitur aplikasi
+    berjalan sesuai dengan spesifikasi yang telah ditetapkan pada tahap perancangan.
+  </p>
+  <p>
+    Dari aspek fungsionalitas navigasi, semua tautan dan tombol navigasi berfungsi dengan benar
+    dan mengarahkan pengguna ke halaman yang tepat. Sistem penanda tautan aktif berhasil memberikan
+    umpan balik visual yang akurat kepada pengguna mengenai posisi mereka saat ini di dalam aplikasi.
+  </p>
+  <p>
+    Dari aspek modul materi, konten teks dan gambar ditampilkan dengan baik pada semua ukuran layar.
+    Layout responsif yang dibangun dengan Tailwind CSS terbukti mampu beradaptasi dengan sempurna
+    antara tampilan desktop (dua kolom) dan mobile (satu kolom) tanpa kehilangan readability.
+  </p>
+  <p>
+    Fitur eksplorasi objek 3D berjalan dengan lancar pada browser yang mendukung WebGL. Model
+    tiga dimensi dapat dipilih, dirotasi, dan di-zoom secara interaktif. Mekanisme fallback juga
+    bekerja dengan baik untuk mencegah tampilan yang rusak (broken UI) ketika model tidak dapat
+    dimuat akibat koneksi internet yang terputus.
+  </p>
+  <p>
+    Sistem kuis terbukti bebas dari bug kritis. Logika penilaian berjalan akurat, feedback warna
+    pada jawaban benar/salah diberikan secara instan, dan mekanisme pencegahan jawaban ganda
+    berhasil mencegah manipulasi skor. Halaman hasil kuis juga berhasil menampilkan skor akhir
+    dengan benar setelah sepuluh soal diselesaikan.
+  </p>
+  <p>
+    Satu catatan pengembangan yang perlu diperhatikan adalah ketergantungan aplikasi pada CDN
+    eksternal (Tailwind CSS, Google Fonts, Material Symbols, dan Model Viewer). Apabila pengguna
+    mengakses aplikasi tanpa koneksi internet, tampilan visual dan fungsionalitas objek 3D akan
+    terdampak. Hal ini merupakan area perbaikan yang perlu diatasi di versi mendatang melalui
+    implementasi Progressive Web App (PWA) dengan cache berbasis Service Worker.
+  </p>
+</div>
+
+<!-- ============================================================
+     BAB V PENUTUP
+============================================================ -->
+<div class="page">
+  <h2>BAB V<br/>PENUTUP</h2>
+
+  <h3 class="sub-bab mt-18">5.1 Kesimpulan</h3>
+  <p>
+    Berdasarkan hasil analisis, perancangan, implementasi, dan pengujian yang telah dilakukan,
+    dapat ditarik beberapa kesimpulan sebagai berikut:
+  </p>
+  <ol>
+    <li>
+      Aplikasi multimedia interaktif berbasis web untuk pengenalan perangkat komputer telah berhasil
+      dikembangkan menggunakan teknologi HTML5, CSS3 (Tailwind CSS), dan JavaScript murni. Aplikasi
+      telah dipublikasikan dan dapat diakses secara publik melalui platform GitHub Pages pada alamat
+      <em>https://rizkyprodvo.github.io/multimedia-perangkat-komputer/</em>.
+    </li>
+    <li>
+      Aplikasi ini berhasil mengintegrasikan enam elemen multimedia secara sinergis: teks deskriptif
+      terstruktur, gambar ilustrasi kartun yang informatif, audio narasi, video edukasi animasi,
+      animasi CSS pada antarmuka, serta eksplorasi objek 3D interaktif yang dapat diputar dan di-zoom.
+      Integrasi keenam elemen ini menciptakan pengalaman belajar yang jauh lebih kaya dan imersif
+      dibandingkan media pembelajaran konvensional berbasis teks statis.
+    </li>
+    <li>
+      Pengujian Black Box Testing terhadap 25 skenario uji yang mencakup modul navigasi, materi,
+      objek 3D, video, kuis, dan responsivitas memberikan tingkat keberhasilan 100%, menunjukkan
+      bahwa seluruh fitur aplikasi berfungsi sesuai dengan spesifikasi yang telah dirancang tanpa
+      ditemukan bug kritis.
+    </li>
+    <li>
+      Antarmuka aplikasi yang dibangun dengan prinsip Material Design 3 memberikan pengalaman
+      visual yang modern, konsisten, dan responsif di berbagai ukuran layar, mulai dari
+      smartphone hingga layar desktop. Sistem navigasi bawah yang intuitif memudahkan pengguna
+      untuk berpindah antar modul dengan cepat.
+    </li>
+    <li>
+      Sistem kuis interaktif dengan 10 soal pilihan ganda, sistem penilaian otomatis, umpan balik
+      warna instan, dan halaman hasil terbukti mampu menjadi alat evaluasi mandiri yang efektif
+      bagi pengguna untuk mengukur pemahamannya setelah mempelajari materi.
+    </li>
+  </ol>
+
+  <h3 class="sub-bab mt-18">5.2 Saran</h3>
+  <p>
+    Meskipun aplikasi ini telah berhasil memenuhi seluruh target fungsional yang direncanakan,
+    terdapat beberapa saran pengembangan untuk meningkatkan kualitas dan jangkauan aplikasi di
+    masa mendatang:
+  </p>
+  <ol>
+    <li>
+      <strong>Implementasi Progressive Web App (PWA):</strong> Aplikasi perlu dikembangkan menjadi
+      Progressive Web App dengan memanfaatkan Service Worker dan manifest file agar dapat berjalan
+      secara offline. Hal ini akan mengatasi ketergantungan pada koneksi internet untuk memuat
+      CDN eksternal dan membuat aplikasi dapat diinstal langsung dari browser ke perangkat pengguna.
+    </li>
+    <li>
+      <strong>Penambahan Fitur Autentikasi dan Pelacakan Progres:</strong> Pengembangan berikutnya
+      dapat mengintegrasikan sistem login sederhana dan basis data (misalnya Firebase Firestore)
+      untuk menyimpan progres belajar dan skor kuis pengguna secara persisten lintas sesi dan
+      perangkat.
+    </li>
+    <li>
+      <strong>Peningkatan Kualitas dan Kuantitas Konten:</strong> Konten materi dapat diperluas
+      dengan menambahkan lebih banyak perangkat (misalnya GPU, RAM, PSU, kamera digital) beserta
+      model 3D dan video edukasinya. Soal kuis juga dapat diperbanyak menjadi 30–50 soal dengan
+      mekanisme pengacakan soal agar setiap sesi kuis memberikan pengalaman yang berbeda.
+    </li>
+    <li>
+      <strong>Augmented Reality (AR):</strong> Untuk pengalaman yang lebih imersif, fitur eksplorasi
+      3D dapat dikembangkan lebih lanjut dengan mengintegrasikan teknologi WebXR sehingga pengguna
+      dapat melihat model 3D perangkat komputer dalam lingkungan nyata mereka melalui kamera
+      smartphone.
+    </li>
+    <li>
+      <strong>Pengujian Usabilitas Terstruktur:</strong> Perlu dilakukan uji usabilitas formal
+      kepada kelompok pengguna target (misalnya siswa SD/SMP) untuk mendapatkan data empiris
+      mengenai tingkat kemudahan penggunaan, efektivitas pembelajaran, dan kepuasan pengguna.
+      Data tersebut dapat menjadi dasar perbaikan desain yang lebih terarah.
+    </li>
+    <li>
+      <strong>Optimasi Performa:</strong> Berkas gambar dan model 3D perlu dioptimasi (kompresi
+      lossless/lossy, lazy loading) untuk mempercepat waktu muat halaman, terutama bagi pengguna
+      dengan koneksi internet yang terbatas.
+    </li>
+  </ol>
+</div>
+
+<!-- ============================================================
+     DAFTAR PUSTAKA
+============================================================ -->
+<div class="page">
+  <h2>DAFTAR PUSTAKA</h2>
+  <br/>
+
+  <div class="ref-item">
+    Binanto, I. (2023). <em>Multimedia Digital: Dasar Teori dan Pengembangannya</em> (Ed. ke-3). Penerbit Andi.
+    Diakses dari <a href="https://www.penerbitandi.com" target="_blank">https://www.penerbitandi.com</a>
+  </div>
+
+  <div class="ref-item">
+    GitHub, Inc. (2023). <em>About GitHub Pages</em>. GitHub Docs.
+    Diakses dari <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages" target="_blank">https://docs.github.com/en/pages/getting-started-with-github-pages/about-github-pages</a>
+  </div>
+
+  <div class="ref-item">
+    Tegeh, I. M., Simamora, A. H., &amp; Dwipayana, K. (2022). Pengembangan media pembelajaran
+    interaktif berbasis model 3D untuk meningkatkan pemahaman konseptual siswa pada materi
+    perangkat keras komputer. <em>Jurnal Nasional Pendidikan Teknik Informatika (Janapati)</em>,
+    <em>11</em>(1), 28–40.
+    Diakses dari <a href="https://ejournal.undiksha.ac.id/index.php/janapati" target="_blank">https://ejournal.undiksha.ac.id/index.php/janapati</a>
+  </div>
+
+  <div class="ref-item">
+    Arsyad, A. (2022). <em>Media Pembelajaran</em> (Ed. ke-22). PT RajaGrafindo Persada.
+    Diakses dari <a href="https://www.rajagrafindo.co.id" target="_blank">https://www.rajagrafindo.co.id</a>
+  </div>
+
+  <div class="ref-item">
+    Kemendikbud. (2023). <em>Laporan Pemetaan Mutu Pendidikan: Pemanfaatan Teknologi dalam Pembelajaran
+    di Indonesia</em>. Pusdatin Kemendikbudristek.
+    Diakses dari <a href="https://pusdatin.kemdikbud.go.id" target="_blank">https://pusdatin.kemdikbud.go.id</a>
+  </div>
+
+  <div class="ref-item">
+    Mayer, R. E. (Ed.). (2022). <em>The Cambridge Handbook of Multimedia Learning</em> (3rd ed.). Cambridge University Press.
+    Diakses dari <a href="https://www.cambridge.org" target="_blank">https://www.cambridge.org</a>
+  </div>
+
+  <div class="ref-item">
+    Mayer, R. E., &amp; Fiorella, L. (2022). Principles for reducing extraneous processing in multimedia learning.
+    In R. E. Mayer (Ed.), <em>The Cambridge Handbook of Multimedia Learning</em> (3rd ed., pp. 182–208).
+    Cambridge University Press.
+    Diakses dari <a href="https://www.cambridge.org" target="_blank">https://www.cambridge.org</a>
+  </div>
+
+  <div class="ref-item">
+    Susanti, F., &amp; Hidayat, R. (2023). Penerapan model 3D interaktif dalam media pembelajaran
+    pengenalan perangkat keras komputer berbasis web. <em>Jurnal Teknologi Informasi dan Ilmu
+    Komputer (JTIIK)</em>, <em>10</em>(3), 567–576.
+    Diakses dari <a href="https://jtiik.ub.ac.id" target="_blank">https://jtiik.ub.ac.id</a>
+  </div>
+
+  <div class="ref-item">
+    Munir. (2022). <em>Multimedia: Konsep dan Aplikasi dalam Pendidikan</em> (Ed. ke-2). Alfabeta.
+    Diakses dari <a href="https://www.alfabeta.id" target="_blank">https://www.alfabeta.id</a>
+  </div>
+
+  <div class="ref-item">
+    Nugroho, A. C., &amp; Setiawan, W. (2023). Pengembangan media pembelajaran berbasis web
+    interaktif untuk mata pelajaran informatika di SMP menggunakan HTML5 dan JavaScript.
+    <em>Jurnal Inovasi Teknologi Pendidikan</em>, <em>10</em>(2), 143–155.
+    Diakses dari <a href="https://journal.uny.ac.id/index.php/jitp" target="_blank">https://journal.uny.ac.id/index.php/jitp</a>
+  </div>
+
+  <div class="ref-item">
+    Budiman, A., &amp; Santoso, H. B. (2024). Implementasi media pembelajaran interaktif berbasis
+    web responsif menggunakan GitHub Pages sebagai platform deployment gratis. Dalam
+    <em>Prosiding Seminar Nasional Teknologi Informasi dan Multimedia (SEMNASTEKNOMEDIA) 2024</em>
+    (hal. 187–195). Universitas AMIKOM Yogyakarta.
+    Diakses dari <a href="https://semnasteknomedia.amikom.ac.id" target="_blank">https://semnasteknomedia.amikom.ac.id</a>
+  </div>
+
+  <div class="ref-item">
+    Wulandari, R., &amp; Prasetyo, T. A. (2022). Efektivitas media pembelajaran multimedia
+    interaktif berbasis website terhadap motivasi belajar siswa SMK pada kompetensi dasar
+    perangkat keras komputer. <em>Edumatic: Jurnal Pendidikan Informatika</em>, <em>6</em>(2), 212–223.
+    Diakses dari <a href="https://e-journal.stmikbumigora.ac.id/index.php/edumatic" target="_blank">https://e-journal.stmikbumigora.ac.id/index.php/edumatic</a>
+  </div>
+
+  <div class="ref-item">
+    Tailwind Labs. (2024). <em>Tailwind CSS Documentation – Utility-First CSS Framework</em>.
+    Diakses dari <a href="https://tailwindcss.com/docs" target="_blank">https://tailwindcss.com/docs</a>
+  </div>
+
+  <div class="ref-item">
+    Smaldino, S. E., Lowther, D. L., Mims, C., &amp; Russell, J. D. (2022).
+    <em>Instructional Technology and Media for Learning</em> (13th ed.). Pearson Education.
+    Diakses dari <a href="https://www.pearson.com" target="_blank">https://www.pearson.com</a>
+  </div>
+
+  <div class="ref-item">
+    WHATWG. (2024). <em>HTML Living Standard</em>. Web Hypertext Application Technology Working Group.
+    Diakses dari <a href="https://html.spec.whatwg.org/" target="_blank">https://html.spec.whatwg.org/</a>
+  </div>
+</div>
+
+</body>
+</html>
